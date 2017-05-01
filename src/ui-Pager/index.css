@@ -1,0 +1,29 @@
+.Pager {
+  margin: vr(1)rem auto;
+  text-align: center;
+
+  ul {
+    list-style: none;
+    li {
+      display: inline-block;
+      a {
+        @add-mixin rhythm-borders 1px, 0.5;
+        padding-left: vr(0.75)rem;
+        padding-right: vr(0.75)rem;
+        margin: 0 vr(0.125)rem;
+        text-decoration: none;
+
+        background-color: var(--palette-Grey-200);
+        border-color: var(--palette-Grey-200);
+        color: var(--palette-Black-Primary);
+
+      }
+      
+      &.is-active a{
+        background-color: var(--Color-accent);
+        border-color: var(--Color-accent);
+        color: var(--Color-accent-text);
+      }
+    }
+  }
+}

@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Roboto+Mono|Material+Icons');
+
+/*load scss plugin*/
+@import '~vertical-rhythm-reset/dist/vertical-rhythm-reset';
+
+$vr-font-size    : 16px;
+$vr-line-height  : 1.25;
+$vr-modular-scale: 1.25;
+$vr-helpers: false;
+$vr-breakpoints: (
+  60em: ( // 960px
+    font-size    : 16px,
+    line-height  : 1.5,
+    modular-scale: 1.4,
+  ),
+  80em: ( // 1280px
+    font-size    : 18px,
+    line-height  : 1.444,
+    modular-scale: 1.5,
+  )
+);
+
+@include vr-reset;
+
+body { 
+  /*@include vr-grid($lines: true, $highlight: true, $detail: false);*/
+}
+
+@import "~google-material-color/dist/palette.var";
+@import '~suitcss-utils-size/lib/size';
+@import '~suitcss-utils-size/lib/size-sm';
+@import '~suitcss-utils-size/lib/size-md';
+@import '~suitcss-utils-size/lib/size-lg';
+@import '~suitcss-components-button/lib/button';
+@import '~suitcss-components-grid/lib/grid';
+
+@import 'ui-Base/index';
+@import 'ui-Form/index';
+@import 'ui-Button/index';
+@import 'ui-Section/index';
+@import 'ui-Layout/index';
+@import 'ui-Navigation/index';
+@import 'ui-Menu/index';
+@import 'ui-Card/index';
+@import 'ui-Breadcrumb/index';
+@import 'ui-Dialog/index';
+
+/*
+*//*
+@import 'ui-Form';
+@import 'ui-List';
+@import 'ui-Chip';
+@import 'ui-Pager';
+@import 'ui-Tabs';
+*/
+
+@custom-media --sm-viewport (min-width:40em);
+@custom-media --md-viewport (min-width:60em);
+@custom-media --lg-viewport (min-width:80em);
+
+:root {
+  --sans-serif: 'Open Sans', sans-serif;
+  --serif: 'Libre Baskerville', serif;
+  --monospace: "Roboto Mono", monospace;
+  --Heading-font: var(--sans-serif);
+
+  --Grid-gutter-size: 1.5rem;
+
+  --Color-primary:                        var(--palette-Indigo-500);
+  --Color-primary-text:                   var(--palette-Indigo-500-Primary);
+  --Color-primary-secondary-text:         var(--palette-Indigo-500-Secondary);
+  --Color-primary--light:                 var(--palette-Indigo-400);
+  --Color-primary--light-text:            var(--palette-Indigo-400-Primary);
+  --Color-primary--light-secondary-text:  var(--palette-Indigo-400-Secondary);
+  --Color-primary--dark:                  var(--palette-Indigo-600);
+  --Color-primary--dark-text:             var(--palette-Indigo-600-Primary);
+  --Color-primary--dark-secondary-text:   var(--palette-Indigo-600-Secondary);
+
+  --Color-accent:                         var(--palette-Cyan-A200);
+  --Color-accent-text:                    var(--palette-Cyan-A200-Primary);
+  --Color-accent-secondary-text:          var(--palette-Cyan-A200-Secondary);
+  --Color-accent--light:                  var(--palette-Cyan-A100);
+  --Color-accent--light-text:             var(--palette-Cyan-A100-Primary);
+  --Color-accent--light-secondary-text:   var(--palette-Cyan-A100-Secondary);
+  --Color-accent--dark:                   var(--palette-Cyan-A700);
+  --Color-accent--dark-text:              var(--palette-Cyan-A700-Primary);
+  --Color-accent--dark-secondary-text:    var(--palette-Cyan-A700-Secondary);
+
+  --Button-border-width: 1px;
+  --Button-border-color: currentcolor;
+  --Button-color: inherit;
+  --Button-font: inherit;
+  --Button-disabled-opacity: 0.5;
+}
+
+.u-shadow {
+  box-shadow: 0px 1px 2px black;
+}
+
+.u-listUnstyled {
+  list-style: none;
+  padding-left: 0;
+}

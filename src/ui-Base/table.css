@@ -1,0 +1,26 @@
+table {
+  width: 100%;
+  background-color: white;
+  box-shadow: 1px 1px 3px rgba(0,0,0,.5);
+  caption {
+    line-height: 1.25;
+  }
+
+  th {
+    text-align: left;
+  }
+
+  th, td {
+    border-color: var(--palette-Black-Dividers);
+    line-height: 1.5;
+  }
+
+  thead th {
+    color: var(--palette-Black-Primary);
+  }
+
+  tbody td,
+  tfoot td {
+    color: var(--palette-Black-Secondary);
+  }
+}

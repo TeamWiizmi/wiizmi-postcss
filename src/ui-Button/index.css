@@ -1,0 +1,40 @@
+.material-icons {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.Button {
+  background-color: inherit;
+  color: inherit;
+  font-weight: 600;
+  
+  @include vr($font-size: -1, $padding: 0.25 calc(var(--Grid-gutter-size)/2));
+
+  &--circle {
+    @include vr($font-size: 0, $width: 2, $height: 2, $padding: 0);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &--primary {
+    background-color: var(--Color-primary);
+    border-color: var(--Color-primary);
+    color: var(--Color-primary-text);
+  }
+
+  &--accent {
+    background-color: var(--Color-accent);
+    border-color: var(--Color-accent);
+    color: var(--Color-accent-text);
+    &:hover {
+      background-color: var(--Color-accent);
+      color: var(--Color-accent-text);
+    } 
+  }
+
+  & + & {
+    margin-left: calc(var(--Grid-gutter-size)/2);
+  }
+}

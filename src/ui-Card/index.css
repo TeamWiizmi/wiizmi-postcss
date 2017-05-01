@@ -1,0 +1,131 @@
+/** @define Card */
+
+.Card {
+  background-color: var(--palette-White);
+  background-position: center center;
+  background-size: cover;
+  color: var(--palette-White-Primary-Primary);
+  flex-basis: 100%;
+
+  &-media {
+    margin: 0;
+    @util aspect-ratio(16:9);
+    img {
+      position: absolute;
+      margin: auto;
+      left: 0;
+      right: 0;
+      object-fit: cover;
+    }
+  }
+  
+  &-header {
+    @include vr($padding: 0.5 var(--Grid-gutter-size));
+  }
+
+  &-header-title {
+    @include vr($font-size: 1, $margin: 0);
+
+    font-weight: 600;
+    margin: 0;
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+
+  &-header-subtitle {
+    @include vr($font-size: 0, $margin: 0);
+    font-weight: 400;
+    opacity: .9;
+  }
+
+
+  &-actions {
+    @include vr($padding: 0.5 calc(var(--Grid-gutter-size)/2));
+  }
+
+  &-content {
+    @include vr($padding: 0.5 calc(var(--Grid-gutter-size)/1));
+
+    font-weight: 300;
+    flex-grow: 1;
+  }
+
+  &--overlay {
+    position: relative;
+    background-size: cover;
+    color: white;
+    display: flex;
+    flex-direction: column;
+
+    .Card-header,
+    .Card-content,
+    .Card-actions {
+      z-index: 2;
+      position: relative;
+    }
+
+    .Card-header {
+      align-self: flex-start;
+    }
+
+    .Card-actions {
+      margin-top: auto;
+    }
+
+    .Card-stacked {
+      flex-basis: 100%;
+    }
+
+    &:before {
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background-color: rgba(0,0,0,.5);
+      z-index: 1;
+    }
+  }
+
+  &--horizontal {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .Card-media {
+      width: 35%;
+      height: auto;
+      padding: 0;
+      flex: 1;
+      img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+      }
+    }
+    .Card-stacked {
+      flex: 2;
+    }
+  }
+
+  &--shadow {
+    box-shadow: 1px 1px 1px rgba(0,0,0,.5);
+  }
+
+  &--primary {
+    background-color: var(--Color-primary);
+    color: var(--Color-primary-text);
+  }
+
+  &--primaryLight {
+    background-color: var(--Color-primary--light);
+    color: var(--Color-primary--light-text);
+  }
+
+
+  &--accent {
+    background-color: var(--Color-accent);
+    color: var(--Color-accent-text);
+  }
+}
+/* @end */

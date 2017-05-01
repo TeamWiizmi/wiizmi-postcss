@@ -1,0 +1,32 @@
+fieldset {
+  @include vr($padding: 0.5 calc(var(--Grid-gutter-size)/2) 1);
+
+}
+
+label {
+  @include vr($margin-top: 1);
+  display: block;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  + label {
+    margin-top: 0;
+    display: inline-block;
+  }
+}
+
+textarea {
+  resize: vertical;
+}
+
+input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="reset"]), 
+select, 
+textarea {
+  width: 100%;
+}
+
+input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="reset"]) {
+  @include vr($margin-top: 0.5, $margin-bottom: 0.5, $padding: 1 calc(var(--Grid-gutter-size)/2), $offset: 1px);
+  border-color: inherit;
+}

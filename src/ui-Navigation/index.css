@@ -1,0 +1,12 @@
+.Navigation {
+  padding: 0;
+
+  &-title {
+    margin: 0;
+    background-color: var(--Color-primary);
+    color: var(--Color-primary-text);
+    a {
+      color: inherit;
+    }
+  }
+}

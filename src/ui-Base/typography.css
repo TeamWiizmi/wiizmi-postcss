@@ -1,0 +1,25 @@
+@custom-selector :--heading h1, h2, h3, h4, h5, h6;
+
+a {
+  color: var(--Color-accent);
+}
+
+:--heading {
+  font-family: var(--Heading-font);
+  @include vr($margin: 2 0 1 0);
+}
+
+h1 {
+}
+
+h4 {
+  font-weight: 400;
+}
+
+h5 {
+  font-weight: 400;
+}
+
+h6 {
+  font-weight: 400;
+}

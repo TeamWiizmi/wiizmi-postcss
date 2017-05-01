@@ -1,0 +1,35 @@
+.List {
+  list-style: none;
+
+  &-item {
+    display: flex;
+    padding: vr(0.5)rem;
+    @add-mixin apply-side-rhythm-border bottom, 1px, 0.5;
+    border-color: var(--Color-accent--light);
+
+    &-media {
+      display: block;
+      margin-right: vr(0.5)rem;
+      img {
+        max-width: none;
+      }
+    }
+
+    &-stacked {
+      flex-grow: 1;
+    }
+
+    &-title {
+      @apply --font-size-1;
+      margin-top: 0;
+      a {
+        color: inherit;
+      }
+    }
+
+    &-content {
+      @apply --font-size--1;
+    }
+
+  }
+}

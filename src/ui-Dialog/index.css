@@ -1,0 +1,37 @@
+.Dialog {
+  background: white;
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: fit-content;
+  height: fit-content;
+  margin: auto;
+  padding: 0;
+  border: 0;
+  box-shadow: 1px 1px 1px rgba(0,0,0,.5);
+
+  &[open] {
+    display: block;
+  }
+
+  & + .backdrop {
+    position: fixed;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background: rgba(0,0,0,0.5);
+  }
+
+  &-title {
+    @include vr($font-size: 1, $padding: 0.5 var(--Grid-gutter-size));
+    margin: 0;
+  }
+
+  &-content {
+    @include vr($font-size: 0, $padding: 0.5 var(--Grid-gutter-size));
+    color: var(--palette-Black-Secondary);
+  }
+
+  &-actions {
+    @include vr($padding: 0.5 calc(var(--Grid-gutter-size)/2));
+  }
+
+}

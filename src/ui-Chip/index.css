@@ -1,0 +1,13 @@
+.Chip {
+  display: inline-block;
+  padding: vr(0.25)rem;
+  line-height: 1;
+  background-color: var(--palette-Grey-200);
+  color: var(--palette-Grey-100-Secondary);
+  text-decoration: none;
+  white-space: nowrap;
+  
+  &:hover {
+    text-decoration: none;
+  }
+}

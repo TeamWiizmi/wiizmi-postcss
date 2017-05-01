@@ -1,0 +1,29 @@
+.Form {
+  &-item {
+    @include vr($margin: 1 0);
+
+    label {
+      margin-top: 0;
+    }
+    &-hint {
+      @include vr($font-size: -1);
+      color: var(--palette-Black-Secondary);
+    }
+
+  }
+
+  &-item.is-error {
+    border-left-width: 3px;
+    border-left-style: solid;
+    border-color: var(--palette-Red-A200);
+    padding-left: var(--Grid-gutter-size);
+
+    .Form-item-hint {
+      color: var(--palette-Red-A200);
+    }
+  }
+
+  &-actions {
+  }
+
+}
