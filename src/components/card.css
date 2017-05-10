@@ -1,16 +1,15 @@
-/** @define Card */
-
 .Card {
   background-color: var(--palette-White);
   background-position: center center;
   background-size: cover;
   color: var(--palette-White-Primary-Primary);
   flex-basis: 100%;
-
+  
   &-media {
     margin: 0;
     @util aspect-ratio(16:9);
-    img {
+
+    & img {
       position: absolute;
       margin: auto;
       left: 0;
@@ -20,35 +19,38 @@
   }
   
   &-header {
-    @include vr($padding: 0.5 var(--Grid-gutter-size));
+    padding: 0.5lh var(--Grid-gutter-size);
   }
 
   &-header-title {
-    @include vr($font-size: 1, $margin: 0);
 
-    font-weight: 600;
+    @apply --font-size-2;
+
+    font-weight: bolder;
     margin: 0;
-    a {
+    & a {
       color: inherit;
       text-decoration: none;
     }
   }
 
+
   &-header-subtitle {
-    @include vr($font-size: 0, $margin: 0);
-    font-weight: 400;
-    opacity: .9;
+    @apply --font-size-1;
+
+    font-weight: bolder;
+    margin: 0.5lh 0 0 0;
+    opacity: .85;
   }
 
 
   &-actions {
-    @include vr($padding: 0.5 calc(var(--Grid-gutter-size)/2));
+    padding: 0.5lh calc(var(--Grid-gutter-size)/2);
   }
 
   &-content {
-    @include vr($padding: 0.5 calc(var(--Grid-gutter-size)/1));
-
-    font-weight: 300;
+    padding: 0.5lh var(--Grid-gutter-size);
+    font-weight: normal;
     flex-grow: 1;
   }
 
@@ -59,22 +61,22 @@
     display: flex;
     flex-direction: column;
 
-    .Card-header,
-    .Card-content,
-    .Card-actions {
+    & .Card-header,
+    & .Card-content,
+    & .Card-actions {
       z-index: 2;
       position: relative;
     }
 
-    .Card-header {
+    & .Card-header {
       align-self: flex-start;
     }
 
-    .Card-actions {
+    & .Card-actions {
       margin-top: auto;
     }
 
-    .Card-stacked {
+    & .Card-stacked {
       flex-basis: 100%;
     }
 
@@ -92,24 +94,26 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    .Card-media {
-      width: 35%;
-      height: auto;
-      padding: 0;
+
+    & .Card-media {
       flex: 1;
-      img {
-        width: 100%;
+      height: auto;
+      & img {
+        max-width: initial;
         height: 100%;
         position: absolute;
       }
     }
-    .Card-stacked {
-      flex: 2;
-    }
-  }
 
-  &--shadow {
-    box-shadow: 1px 1px 1px rgba(0,0,0,.5);
+    & .Card-stacked {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+    }
+
+    & .Card-actions {
+      margin-top: auto;
+    }
   }
 
   &--primary {
@@ -128,4 +132,3 @@
     color: var(--Color-accent-text);
   }
 }
-/* @end */

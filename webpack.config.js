@@ -15,21 +15,12 @@ module.exports = {
           use: [
             'css-loader',
             'postcss-loader',
-            'sass-loader',
           ]
         })
       },
       {
         test: /\.pug$/,
         use: 'pug-loader'
-      },
-      { 
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/, 
-        loader: 'babel-loader',
-        query: {
-          presets: ['es2015', 'react']
-        }
       }
     ]
   },
@@ -38,7 +29,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist')
   },
   plugins: [
-    new ExtractTextPlugin({filename: 'index.css', allChunks: true}),
+    new ExtractTextPlugin({filename: 'index.css'}),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: 'views/index.pug'

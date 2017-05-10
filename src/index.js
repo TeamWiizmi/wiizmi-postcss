@@ -1,6 +1,20 @@
 $(document).ready(function() {
 
-  $('[data-toggle="drawer"], [data-toggle="dropdown"]').on('click', function(e) {
+  $('[data-toggle="drawer"]').on('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    var target = $(this).data('target');
+    if ($(target).hasClass('is-active')) {
+      $(target).removeClass('is-active');
+      $('body').removeClass('u-nbfc');
+    } else {
+      $(target).addClass('is-active');
+      $('body').addClass('u-nbfc');
+    }
+
+  });
+
+  $('[data-toggle="dropdown"]').on('click', function(e) {
     e.preventDefault();
     e.stopPropagation();
     var target = $(this).data('target');

@@ -1,9 +1,7 @@
 table {
   width: 100%;
   background-color: white;
-  box-shadow: 1px 1px 3px rgba(0,0,0,.5);
   caption {
-    line-height: 1.25;
   }
 
   th {
@@ -12,7 +10,6 @@ table {
 
   th, td {
     border-color: var(--palette-Black-Dividers);
-    line-height: 1.5;
   }
 
   thead th {
@@ -21,6 +18,8 @@ table {
 
   tbody td,
   tfoot td {
+    border-top-width: 1px;
+    border-top-style: solid;
     color: var(--palette-Black-Secondary);
   }
 }

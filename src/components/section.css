@@ -1,57 +1,57 @@
 .Section {
-  @include vr($padding: 1 var(--Grid-gutter-size));
-
-
+  padding: 2lh var(--Grid-gutter-size);
   position: relative;
 
   &-title {
-    @include vr($font-size: 3, $margin: 1 0 0.5 0);
-    font-weight: 600;
+    @apply --font-size-4;
+    font-weight: bolder;
+    margin-bottom: 0.5lh;
   }
 
   &-subtitle {
-    @include vr($font-size: 2, $margin: 0 0 0.5 0);
+    @apply --font-size-3;
+    font-weight: bold;
     margin-top: 0;
-    color: var(--palette-Black-Secondary);
+    opacity: 0.85;
   }
 
   &-lead {
-    @include vr($font-size: 1, $margin: 1 0);
-    font-family: var(--serif);
-    font-weight: lighter;
+    @apply --font-size-1;
+    font-weight: normal;
   }
 
   &--hero {
-    color: white;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    min-height: 60vh;
+    min-height: 50vh;
     overflow: hidden;
+
+/*    &:after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      content: '';
+      width: 100%;
+      height: 100%;
+    }
+*/
+
+    .Section-text {
+      background-color: rgba(255,255,255,.5);
+      padding: 0.5lh var(--Grid-gutter-size);
+    }
 
     .Section-inner {
       position: relative;
       z-index: 200;
-    }
-
-    .Section-subtitle {
-      color: var(--palette-White-Secondary);
-    }
-
-    .Section-text {
-      padding: vr(1)rem;
-      background-color: color(var(--Color-accent--dark) a(90%));
-      color: var(--Color-accent--dark-text);
     }
   }
 
   &--primary {
     background-color: var(--Color-primary);
     color: var(--Color-primary-text);
-
-    .Section-subtitle {
-      color: var(--Color-primary-secondary-text);
-    }
   }
 
   &--primaryLight {
@@ -62,10 +62,6 @@
   &--primaryDark {
     background-color: var(--Color-primary--dark);
     color: var(--Color-primary--dark-text);
-
-    .Section-subtitle {
-      color: var(--Color-primary--dark-secondary-text);
-    }
   }
 
   &--accent {

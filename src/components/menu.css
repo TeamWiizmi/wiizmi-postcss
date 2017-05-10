@@ -6,13 +6,21 @@
   &-item {
     position: relative;
 
-    a {
-      @include vr($padding: 0.5 calc(var(--Grid-gutter-size)/2));
+    &-link {
+      padding: 0.5lh calc(var(--Grid-gutter-size)/2);
       display: block;
       text-decoration: none;
       color: inherit;
-      &:hover {
-        background-color: var(--palette-Grey-100);
+    }
+
+    .Menu {
+      padding-left: var(--Grid-gutter-size);
+      .Menu-item {
+        .Menu-item-link {
+          /*font-size: ms(-1);*/
+          padding-top: 0.25lh;
+          padding-bottom: 0.25lh;
+        }
       }
     }
   }
@@ -24,15 +32,15 @@
   flex-wrap: nowrap;
   user-select: none;
 
-  > .Menu-item {
+  & > .Menu-item {
 
-    > a {
+    & > a {
+      padding-bottom: calc(0.5lh - 2px);
+
       border-bottom: 2px solid;
-
-      @include vr($offset-bottom: 2);
-
       border-color: transparent;
       white-space: nowrap;
+
       &.is-active,
       &:focus ,
       &:hover {
@@ -70,6 +78,7 @@
       min-width: 220px;
       box-shadow: 1px 1px 1px black;
       background-color: white;
+      padding-left: 0;
     }
 
     &:hover > .Menu {

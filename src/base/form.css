@@ -1,0 +1,86 @@
+@custom-selector :--text-inputs
+  input[type='text'],
+  input[type='email'],
+  input[type='search'],
+  input[type='tel'],
+  input[type='url'],
+  input[type='number'],
+  input[type='date'],
+  input[type='month'],
+  input[type='week'],
+  input[type='datetime'],
+  input[type='datetime-local'],
+  input[type='password'];
+
+fieldset {
+  margin: 1lh 0;
+  padding: calc(0.5lh - 1px) var(--Grid-gutter-size);
+}
+
+legend {
+  padding: 0 calc(var(--Grid-gutter-size)/3);
+  
+}
+
+label {
+  margin: 1.25lh 0 0.25lh;
+  display: block;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  & + label {
+    cursor: pointer;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: calc(var(--Grid-gutter-size)/3);
+    margin-right: var(--Grid-gutter-size);
+    display: inline-block;
+  }
+}
+
+textarea {
+  resize: vertical;
+}
+
+:--text-inputs,
+fieldset,
+select, 
+textarea {
+  width: 100%;
+  border-width: var(--Input-border-width);
+  border-style: solid;
+  border-color: var(--Input-border-color);
+}
+
+:--text-inputs {
+  font-size: ms(0);
+  line-height: 1lh;
+  padding: var(--Input-padding);
+
+  &::placeholder {
+    color: var(--palette-Black-Hint);
+  }
+}
+
+select[multiple] {
+  padding: calc(0.5lh - 1px) calc(var(--Grid-gutter-size)/2 - 1px);
+}
+
+option {
+  height: 1lh;
+  padding: 0;
+}
+
+select:not([multiple]) {
+  font-size: ms(0);
+  line-height: 1lh;
+  height: auto;
+  padding: var(--Input-padding);
+  appearance: none;
+  border-radius: 0;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"> <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/> <path d="M0-.75h24v24H0z" fill="none"/> </svg>');
+  background-color: white;
+  background-repeat: no-repeat;
+  background-position: 99% 50%;
+}

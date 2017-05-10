@@ -8,6 +8,13 @@ block content
     h4 A modular scale, like a musical scale, is a prearranged set of harmonious proportions.
     h5 A modular scale, like a musical scale, is a prearranged set of harmonious proportions.
     h6 A modular scale, like a musical scale, is a prearranged set of harmonious proportions.
+
+    p Raw denim yuccie distillery, scenester dreamcatcher hella snackwave direct trade banh mi edison bulb flexitarian skateboard banjo. Poutine helvetica viral organic. Bicycle rights listicle actually, cray venmo helvetica taxidermy gluten-free scenester air plant XOXO tousled try-hard retro man braid. Hammock kitsch chartreuse, skateboard before they sold out occupy jean shorts. Scenester locavore raw denim XOXO cray. Artisan organic church-key lumbersexual man braid, taxidermy intelligentsia deep v. Ennui try-hard mumblecore polaroid, hot chicken street art post-ironic roof party chia.
+
+    p Cardigan small batch single-origin coffee PBR&B. Church-key narwhal mustache, fap lyft pork belly heirloom wolf pitchfork try-hard unicorn activated charcoal salvia cold-pressed. Pug tofu deep v, 3 wolf moon kickstarter fam PBR&B mlkshk unicorn. Church-key beard hashtag, pour-over direct trade kale chips helvetica readymade selvage twee truffaut. Prism vaporware stumptown listicle knausgaard freegan. Plaid gluten-free umami, deep v VHS hashtag pinterest cred williamsburg four loko gentrify succulents before they sold out seitan try-hard. Bitters beard vape polaroid, tofu drinking vinegar lomo affogato four loko normcore artisan vaporware direct trade glossier.
+
+
+
   .Section
     h2.Section-title Base
     h3.Section-subtitle Form
@@ -48,6 +55,11 @@ block content
 
         .Form-item.is-error
           label Form Item - is error
+          input(type='text')
+          .Form-item-hint A modular scale, like a musical scale, is a prearranged set of harmonious proportions.
+
+        .Form-item.Form-item--inline
+          label Form Item
           input(type='text')
           .Form-item-hint A modular scale, like a musical scale, is a prearranged set of harmonious proportions.
 
@@ -181,10 +193,48 @@ block content
           figure.Card-media
             img(src='http://www.metmuseum.org/toah/images/h5/h5_JP1847.jpg')
           .Card-content
+            ul.u-listInline
+              li
+                .Chip Modular Scale
+              li
+                .Chip Muscial
+              li
+                .Chip Ratio
+              li
+                .Chip Harmonious
+              li
+                .Chip Proportions
+
             | A modular scale, like a musical scale, is a prearranged set of harmonious proportions.
           footer.Card-actions
             .Button ACTION
             .Button.Button--accent ACTION
+      .Grid-cell.u-md-size2of3
+        .Card.Card--horizontal.u-shadow
+          figure.Card-media
+            img(src='http://www.metmuseum.org/toah/images/h5/h5_JP1847.jpg')
+          .Card-stacked
+            header.Card-header
+              h2.Card-header-title Card header title
+              h3.Card-header-subtitle Card header sub title
+            .Card-content
+              ul.u-listInline
+                li
+                  .Chip Modular Scale
+                li
+                  .Chip Muscial
+                li
+                  .Chip Ratio
+                li
+                  .Chip Harmonious
+                li
+                  .Chip Proportions
+
+              | A modular scale, like a musical scale, is a prearranged set of harmonious proportions.
+            footer.Card-actions
+              .Button ACTION
+              .Button.Button--accent ACTION            
+
   .Section
     h2.Section-title Components
     h3.Section-subtitle Breadcrumbs

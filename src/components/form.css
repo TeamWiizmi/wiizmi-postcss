@@ -1,22 +1,20 @@
 .Form {
+  margin: 0;
+
   &-item {
-    @include vr($margin: 1 0);
-
-    label {
-      margin-top: 0;
-    }
+    margin: 1lh 0;
+    
     &-hint {
-      @include vr($font-size: -1);
-      color: var(--palette-Black-Secondary);
+      @apply --font-size--1;
+      color: var(--palette-Black-Hint);
     }
-
   }
 
   &-item.is-error {
     border-left-width: 3px;
     border-left-style: solid;
     border-color: var(--palette-Red-A200);
-    padding-left: var(--Grid-gutter-size);
+    padding-left: calc(var(--Grid-gutter-size) - 3px);
 
     .Form-item-hint {
       color: var(--palette-Red-A200);
@@ -25,5 +23,4 @@
 
   &-actions {
   }
-
 }

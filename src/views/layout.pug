@@ -23,21 +23,13 @@ html(lang="en")
       .Layout-obfuscator(data-target='#drawer' data-toggle='drawer')
       header.Layout-header
         .Layout-header-row
-          .Layout-header-drawerButton(data-target='#drawer' data-toggle='drawer')
+          .Layout-header-drawerButton.Button(data-target='#drawer' data-toggle='drawer')
             i.material-icons menu
           img.Layout-header-logo(src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/CSS.3.svg/730px-CSS.3.svg.png")
           .Layout-header-title
             .Layout-header-title-text WIIZMI POSTCSS
             .Layout-header-title-slogan Material Design Real Estate
         .Layout-header-row
-
-          //- form.Form.Form--inline(action="#")
-          //-   .Form-item.Form-item--inline.Form-item--floating
-          //-     label
-          //-       i.material-icons search
-          //-     input(type='text', name='name', value='', tabindex='1' placeholder="Search...")
-          //-     button.Button.Button--accent.u-hidden Search
-
           nav.Navigation
             ul.Menu.Menu--inline
               li.Menu-item
@@ -63,6 +55,15 @@ html(lang="en")
                             a.Menu-item-link(href="#") Menu Item
                           li.Menu-item
                             a.Menu-item-link(href="#") Menu Item
+          form.Form.u-flexExpandLeft(action="#")
+            .Arrange
+              label(hidden) Search
+              .Arrange-sizeFit
+                input(type='text', name='name', value='', tabindex='1' placeholder="Search...")
+              .Arrange-sizeFit
+                button.Button.Button--accent
+                  i.material-icons search
+
 
       main.Layout-content
          block content

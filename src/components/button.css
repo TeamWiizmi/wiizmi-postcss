@@ -1,33 +1,38 @@
-.material-icons {
-  font-size: inherit;
-  line-height: inherit;
-}
-
 .Button {
   background-color: inherit;
   color: inherit;
-  font-weight: 600;
-  
-  @include vr($font-size: -1, $padding: 0.25 calc(var(--Grid-gutter-size)/2));
+  font-weight: bolder;
+  text-transform: uppercase;
+  vertical-align: middle;
+  .material-icons {
+    line-height: 1;
+    font-size: inherit;
+    vertical-align: middle;
+  }
+
+  &--lg {
+    padding: calc(0.5lh - 1px) calc(var(--Grid-gutter-size) - 1px);
+  }
 
   &--circle {
-    @include vr($font-size: 0, $width: 2, $height: 2, $padding: 0);
+    width: 2lh;
+    height: 2lh;
     border-radius: 50%;
     display: inline-flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
   }
 
   &--primary {
     background-color: var(--Color-primary);
-    border-color: var(--Color-primary);
     color: var(--Color-primary-text);
+    border-color: var(--Color-primary);
   }
 
   &--accent {
     background-color: var(--Color-accent);
-    border-color: var(--Color-accent);
     color: var(--Color-accent-text);
+    border-color: var(--Color-accent);
     &:hover {
       background-color: var(--Color-accent);
       color: var(--Color-accent-text);

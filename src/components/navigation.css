@@ -2,9 +2,10 @@
   padding: 0;
 
   &-title {
+    font-size: ms(0);
+    padding: 1lh var(--Grid-gutter-size);
     margin: 0;
-    background-color: var(--Color-primary);
-    color: var(--Color-primary-text);
+
     a {
       color: inherit;
     }

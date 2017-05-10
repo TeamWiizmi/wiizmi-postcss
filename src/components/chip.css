@@ -1,7 +1,7 @@
 .Chip {
+  @include vr($font-size: -1);
+  padding: 0 calc(var(--Grid-gutter-size)/4);
   display: inline-block;
-  padding: vr(0.25)rem;
-  line-height: 1;
   background-color: var(--palette-Grey-200);
   color: var(--palette-Grey-100-Secondary);
   text-decoration: none;

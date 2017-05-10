@@ -1,19 +1,23 @@
 .Breadcrumb {
-  ol {
+  & ol {
     list-style: none;
     margin: 0;
     padding: 0;
-    li {
+    & li {
       display: inline-block;
       color: inherit;
-      a {
+
+      & a {
         text-decoration: none;
         color: inherit;
 
         &:after {
           font-family: 'Material Icons';
           content: 'chevron_right';
+          vertical-align: middle;
+          line-height: 1;
         }
+
       }
     }
   }
