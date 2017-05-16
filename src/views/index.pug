@@ -1,4 +1,4 @@
-extend layout.pug
+extend shared/layout.pug
 
 block content
   .Section
@@ -175,6 +175,14 @@ block content
     .Button.Button--accent BUTTON
     .Button.Button--circle
       i.material-icons menu
+    a.Button.Button--lg
+      i.material-icons menu
+      |  BUTTON
+    a.Button.Button--sm
+      i.material-icons menu
+      |  BUTTON
+    a.Button(disabled) Disabled
+
     dialog#modal.Dialog
       h3.Dialog-title Title
       .Dialog-content A modular scale, like a musical scale, is a prearranged set of harmonious proportions.
@@ -193,7 +201,7 @@ block content
           figure.Card-media
             img(src='http://www.metmuseum.org/toah/images/h5/h5_JP1847.jpg')
           .Card-content
-            ul.u-listInline
+            ul.u-listInline.u-noMargin
               li
                 .Chip Modular Scale
               li
@@ -218,7 +226,9 @@ block content
               h2.Card-header-title Card header title
               h3.Card-header-subtitle Card header sub title
             .Card-content
-              ul.u-listInline
+              | A modular scale, like a musical scale, is a prearranged set of harmonious proportions.
+              
+              ul.u-listInline.u-noMargin
                 li
                   .Chip Modular Scale
                 li
@@ -230,7 +240,6 @@ block content
                 li
                   .Chip Proportions
 
-              | A modular scale, like a musical scale, is a prearranged set of harmonious proportions.
             footer.Card-actions
               .Button ACTION
               .Button.Button--accent ACTION            

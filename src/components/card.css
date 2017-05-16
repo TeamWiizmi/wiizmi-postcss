@@ -24,11 +24,11 @@
 
   &-header-title {
 
-    @apply --font-size-2;
+    @apply --font-size-1;
 
     font-weight: bolder;
     margin: 0;
-    & a {
+    a {
       color: inherit;
       text-decoration: none;
     }
@@ -36,10 +36,10 @@
 
 
   &-header-subtitle {
-    @apply --font-size-1;
+    @apply --font-size-0;
 
     font-weight: bolder;
-    margin: 0.5lh 0 0 0;
+    margin: 0;
     opacity: .85;
   }
 
@@ -50,7 +50,6 @@
 
   &-content {
     padding: 0.5lh var(--Grid-gutter-size);
-    font-weight: normal;
     flex-grow: 1;
   }
 

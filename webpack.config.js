@@ -33,7 +33,12 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: 'views/index.pug'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'article.html',
+      template: 'views/article.pug'
     })
+
   ],
   devServer: {
     contentBase: path.join(__dirname, "dist"),

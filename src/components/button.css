@@ -1,17 +1,23 @@
+
 .Button {
   background-color: inherit;
   color: inherit;
-  font-weight: bolder;
-  text-transform: uppercase;
   vertical-align: middle;
+
   .material-icons {
     line-height: 1;
     font-size: inherit;
     vertical-align: middle;
   }
 
+  &--sm {
+    @apply --font-size--1;
+    padding: var(--Button-padding--sm);
+  }
+
   &--lg {
-    padding: calc(0.5lh - 1px) calc(var(--Grid-gutter-size) - 1px);
+    @apply --font-size-1;
+    padding: var(--Button-padding--lg);
   }
 
   &--circle {
@@ -21,6 +27,17 @@
     display: inline-flex;
     justify-content: center;
     align-items: center;
+
+    &.Button--sm {
+      width: 1.5lh;
+      height: 1.5lh;
+    }
+
+  }
+
+  &[disabled] {
+    opacity: 0.25;
+    cursor: not-allowed;
   }
 
   &--primary {

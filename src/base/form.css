@@ -29,15 +29,45 @@ label {
 
 input[type="radio"],
 input[type="checkbox"] {
+  appearance: none;
+  opacity: 0;
+
   & + label {
     cursor: pointer;
     margin-top: 0;
     margin-bottom: 0;
-    margin-left: calc(var(--Grid-gutter-size)/3);
     margin-right: var(--Grid-gutter-size);
+    padding-left: 1.25lh;
     display: inline-block;
+    position: relative;
+    &:before {
+      content: '';
+      background-repeat: no-repeat;
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      left: 0;
+    }
   }
 }
+
+input[type="radio"] + label:before {
+  background-image: url(https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_radio_button_unchecked_black_24px.svg);
+}
+
+input[type="radio"]:checked + label:before {
+  background-image: url(https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_radio_button_checked_black_24px.svg);
+}
+
+
+input[type="checkbox"] + label:before {
+  background-image: url(https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_check_box_outline_blank_black_24px.svg);
+}
+
+input[type="checkbox"]:checked + label:before {
+  background-image: url(https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_check_box_black_24px.svg);
+}
+
 
 textarea {
   resize: vertical;

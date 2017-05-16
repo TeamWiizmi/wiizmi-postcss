@@ -46,6 +46,8 @@
   --Button-border-width: 1px;
   --Button-border-color: currentcolor;
   --Button-padding: calc(0.25lh - 1px) calc(var(--Grid-gutter-size)/3 - 1px);
+  --Button-padding--sm: calc(0.125lh - 1px) calc(var(--Grid-gutter-size)/4 - 1px);
+  --Button-padding--lg: calc(0.5lh - 1px) calc(var(--Grid-gutter-size) - 1px);
   --Button-color: inherit;
   --Button-font: inherit;
   --Button-disabled-opacity: 0.5;
@@ -56,29 +58,4 @@
 
   color: var(--palette-Black-Primary);
   border-color: var(--palette-Black-Dividers);
-}
-
-.u-ratio16of9 {
-  @util aspect-ratio(16:9);
-}
-.u-ratio1of1 {
-  @util aspect-ratio(1:1);
-}
-
-.u-shadow {
-  box-shadow: 0px 1px 2px black;
-}
-
-.u-listUnstyled {
-  list-style: none;
-  padding-left: 0;
-}
-
-.u-listInline {
-  list-style: none;
-  padding-left: 0;
-  & > li {
-    margin: 0.25lh calc(var(--Grid-gutter-size)/3) 0.25lh 0;
-    display: inline-block;
-  }
 }

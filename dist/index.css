@@ -1,42 +1,589 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Roboto+Mono|Material+Icons);
-/*start load google font*/
-/*end load google font*/
-/*load scss plugin*/
-/* Vertical Rhythm Reset: Base */
+@import url(https://fonts.googleapis.com/css?family=Material+Icons);/*! normalize.css v6.0.0 | MIT License | github.com/necolas/normalize.css */
+
+/* Document
+   ========================================================================== */
+
 /**
- * google-material-color v1.3.1
- * https://github.com/danlevan/google-material-color
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in
+ *    IE on Windows Phone and in iOS.
  */
+
+html {
+  line-height: 1.15; /* 1 */
+  -ms-text-size-adjust: 100%; /* 2 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/* Sections
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 9-.
+ */
+
+article,
+aside,
+footer,
+header,
+nav,
+section {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in IE.
+ */
+
+figcaption,
+figure,
+main { /* 1 */
+  display: block;
+}
+
+/**
+ * Add the correct margin in IE 8.
+ */
+
+figure {
+  margin: 1em 40px;
+}
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+
+/**
+ * 1. Remove the gray background on active links in IE 10.
+ * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+ */
+
+a {
+  background-color: transparent; /* 1 */
+  -webkit-text-decoration-skip: objects; /* 2 */
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57- and Firefox 39-.
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+
+abbr[title] {
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
+  text-decoration: underline dotted; /* 2 */
+}
+
+/**
+ * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
+ */
+
+b,
+strong {
+  font-weight: inherit;
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
+ * Add the correct font style in Android 4.3-.
+ */
+
+dfn {
+  font-style: italic;
+}
+
+/**
+ * Add the correct background and color in IE 9-.
+ */
+
+mark {
+  background-color: #ff0;
+  color: #000;
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 9-.
+ */
+
+audio,
+video {
+  display: inline-block;
+}
+
+/**
+ * Add the correct display in iOS 4-7.
+ */
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Remove the border on images inside links in IE 10-.
+ */
+
+img {
+  border-style: none;
+}
+
+/**
+ * Hide the overflow in IE.
+ */
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Forms
+   ========================================================================== */
+
+/**
+ * Remove the margin in Firefox and Safari.
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  margin: 0;
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+
+button,
+input { /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+
+button,
+select { /* 1 */
+  text-transform: none;
+}
+
+/**
+ * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+ *    controls in Android 4.
+ * 2. Correct the inability to style clickable types in iOS and Safari.
+ */
+
+button,
+html [type="button"], /* 1 */
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button; /* 2 */
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+
+legend {
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
+}
+
+/**
+ * 1. Add the correct display in IE 9-.
+ * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+
+progress {
+  display: inline-block; /* 1 */
+  vertical-align: baseline; /* 2 */
+}
+
+/**
+ * Remove the default vertical scrollbar in IE.
+ */
+
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10-.
+ * 2. Remove the padding in IE 10-.
+ */
+
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+
+[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+ * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
+ */
+
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+
+/*
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in Edge, IE, and Firefox.
+ */
+
+details, /* 1 */
+menu {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+
+summary {
+  display: list-item;
+}
+
+/* Scripting
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 9-.
+ */
+
+canvas {
+  display: inline-block;
+}
+
+/**
+ * Add the correct display in IE.
+ */
+
+template {
+  display: none;
+}
+
+/* Hidden
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 10-.
+ */
+
+[hidden] {
+  display: none;
+}
+
+/**
+ * A thin layer on top of normalize.css that provides a starting point more
+ * suitable for web applications.
+ */
+
+/**
+ * 1. Prevent padding and border from affecting element width
+ * https://goo.gl/pYtbK7
+ * 2. Change the default font family in all browsers
+ */
+
+html {
+  box-sizing: border-box; /* 1 */
+  font-family: sans-serif; /* 2 */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/**
+ * Removes the default spacing and border for appropriate elements.
+ */
+
+body,
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+figure,
+p,
+pre {
+  margin: 0;
+}
+
+button {
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+
+/**
+ * Work around a Firefox/IE bug where the transparent `button` background
+ * results in a loss of the default `button` focus styles.
+ */
+
+button:focus {
+  outline: 1px dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+iframe {
+  border: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/**
+ * Suppress the focus outline on elements that cannot be accessed via keyboard.
+ * This prevents an unwanted focus outline from appearing around elements that
+ * might still respond to pointer events.
+ */
+
+[tabindex="-1"]:focus {
+  outline: none !important;
+}
+
+/**
+ * Remove the outline on focused links when they are also active or hovered
+ * in all browsers.
+ */
+
+a:active,
+a:hover {
+  outline-width: 0;
+}
+
+/**
+ * Change the font styles in all browsers.
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: sans-serif;
+  font-size: 100%;
+  line-height: 1.15;
+}
+
+/**
+ * Change the border, margin, and padding in all browsers.
+ */
+
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
 /**
  * @define utilities
  * Vertical alignment utilities
  * Depends on an appropriate `display` value.
  */
+
 .u-alignBaseline {
   vertical-align: baseline !important;
 }
+
 .u-alignBottom {
   vertical-align: bottom !important;
 }
+
 .u-alignMiddle {
   vertical-align: middle !important;
 }
+
 .u-alignTop {
   vertical-align: top !important;
 }
+
 /**
  * @define utilities
  * Display-type utilities
  */
+
 .u-block {
   display: block !important;
 }
+
 .u-hidden {
   display: none !important;
 }
+
 /**
  * Completely remove from the flow but leave available to screen readers.
  */
+
 .u-hiddenVisually {
   border: 0 !important;
   clip: rect(1px, 1px, 1px, 1px) !important;
@@ -46,27 +593,34 @@
   position: absolute !important;
   width: 1px !important;
 }
+
 .u-inline {
   display: inline !important;
 }
+
 /**
  * 1. Fix for Firefox bug: an image styled `max-width:100%` within an
  * inline-block will display at its default size, and not limit its width to
  * 100% of an ancestral container.
  */
+
 .u-inlineBlock {
   display: inline-block !important;
   max-width: 100%; /* 1 */
 }
+
 .u-table {
   display: table !important;
 }
+
 .u-tableCell {
   display: table-cell !important;
 }
+
 .u-tableRow {
   display: table-row !important;
 }
+
 /**
  * @define utilities
  * Contain floats
@@ -81,14 +635,17 @@
  * 2. The use of `table` rather than `block` is only necessary if using
  *    `:before` to contain the top-margins of child elements.
  */
+
 .u-cf::before,
 .u-cf::after {
   content: " "; /* 1 */
   display: table; /* 2 */
 }
+
 .u-cf::after {
   clear: both;
 }
+
 /**
  * New block formatting context
  *
@@ -98,9 +655,11 @@
  * N.B. This will clip overflow. Use the alternative method below if this is
  * problematic.
  */
+
 .u-nbfc {
   overflow: hidden !important;
 }
+
 /**
  * New block formatting context (alternative)
  *
@@ -112,31 +671,38 @@
  * N.B. This breaks down in some browsers when elements within this element
  * exceed its width.
  */
+
 .u-nbfcAlt {
   display: table-cell !important; /* 1 */
   width: 10000px !important; /* 2 */
 }
+
 /**
  * Floats
  */
+
 .u-floatLeft {
   float: left !important;
 }
+
 .u-floatRight {
   float: right !important;
 }
+
 /**
  * @define utilities
  * Clean link
  *
  * A link without any text-decoration at all.
  */
+
 .u-linkClean,
 .u-linkClean:hover,
 .u-linkClean:focus,
 .u-linkClean:active {
   text-decoration: none !important;
 }
+
 /**
  * Link complex
  *
@@ -151,22 +717,26 @@
  *   <span class="u-linkComplexTarget">target</span>
  * </a>
  */
+
 .u-linkComplex,
 .u-linkComplex:hover,
 .u-linkComplex:focus,
 .u-linkComplex:active {
   text-decoration: none !important;
 }
+
 .u-linkComplex:hover .u-linkComplexTarget,
 .u-linkComplex:focus .u-linkComplexTarget,
 .u-linkComplex:active .u-linkComplexTarget {
   text-decoration: underline !important;
 }
+
 /**
  * Block-level link
  *
  * Combination of traits commonly used in vertical navigation lists.
  */
+
 .u-linkBlock,
 .u-linkBlock:hover,
 .u-linkBlock:focus,
@@ -174,52 +744,65 @@
   display: block !important;
   text-decoration: none !important;
 }
+
 /**
  * @define utilities
  * Specify the proportional offset after an element.
  * Intentional redundancy build into each set of unit classes.
  * Supports: 2, 4, 5, 6, 8, 10, 12 section
  */
+
 .u-after1of12 {
   margin-right: 8.33333% !important;
 }
+
 .u-after1of10 {
   margin-right: 10% !important;
 }
+
 .u-after1of8 {
   margin-right: 12.5% !important;
 }
+
 .u-after1of6,
 .u-after2of12 {
   margin-right: 16.66667% !important;
 }
+
 .u-after1of5,
 .u-after2of10 {
   margin-right: 20% !important;
 }
+
 .u-after1of4,
 .u-after2of8,
 .u-after3of12 {
   margin-right: 25% !important;
 }
+
 .u-after3of10 {
   margin-right: 30% !important;
 }
+
 .u-after1of3,
 .u-after2of6,
 .u-after4of12 {
   margin-right: 33.33333% !important;
 }
+
 .u-after3of8 {
   margin-right: 37.5% !important;
 }
+
 .u-after2of5,
 .u-after4of10 {
   margin-right: 40% !important;
 }
+
 .u-after5of12 {
   margin-right: 41.66667% !important;
 }
+
 .u-after1of2,
 .u-after2of4,
 .u-after3of6,
@@ -228,46 +811,58 @@
 .u-after6of12 {
   margin-right: 50% !important;
 }
+
 .u-after7of12 {
   margin-right: 58.33333% !important;
 }
+
 .u-after3of5,
 .u-after6of10 {
   margin-right: 60% !important;
 }
+
 .u-after5of8 {
   margin-right: 62.5% !important;
 }
+
 .u-after2of3,
 .u-after4of6,
 .u-after8of12 {
   margin-right: 66.66667% !important;
 }
+
 .u-after7of10 {
   margin-right: 70% !important;
 }
+
 .u-after3of4,
 .u-after6of8,
 .u-after9of12 {
   margin-right: 75% !important;
 }
+
 .u-after4of5,
 .u-after8of10 {
   margin-right: 80% !important;
 }
+
 .u-after5of6,
 .u-after10of12 {
   margin-right: 83.33333% !important;
 }
+
 .u-after7of8 {
   margin-right: 87.5% !important;
 }
+
 .u-after9of10 {
   margin-right: 90% !important;
 }
+
 .u-after11of12 {
   margin-right: 91.66667% !important;
 }
+
 /**
  * @define utilities
  * Offset: breakpoint 1 (small)
@@ -276,7 +871,8 @@
  * Intentional redundancy build into each set of unit classes.
  * Supports: 2, 4, 5, 6, 8, 10, 12 section
  */
-@media (min-width:320px) {
+
+@media (min-width:40em) {
 
   .u-sm-afterNone {
     margin-right: 0 !important;
@@ -394,6 +990,7 @@
   }
 
 }
+
 /**
  * @define utilities
  * Offset: breakpoint 2 (medium)
@@ -402,7 +999,8 @@
  * Intentional redundancy build into each set of unit classes.
  * Supports: 2, 4, 5, 6, 8, 10, 12 section
  */
-@media (min-width:640px) {
+
+@media (min-width:60em) {
 
   .u-md-afterNone {
     margin-right: 0 !important;
@@ -520,6 +1118,7 @@
   }
 
 }
+
 /**
  * @define utilities
  * Offset: breakpoint 3 (large)
@@ -528,7 +1127,8 @@
  * Intentional redundancy build into each set of unit classes.
  * Supports: 2, 4, 5, 6, 8, 10, 12 section
  */
-@media (min-width:960px) {
+
+@media (min-width:80em) {
 
   .u-lg-afterNone {
     margin-right: 0 !important;
@@ -646,52 +1246,65 @@
   }
 
 }
+
 /**
  * @define utilities
  * Specify the proportional offset before an object.
  * Intentional redundancy build into each set of unit classes.
  * Supports: 2, 3, 4, 5, 6, 8, 10, 12 section
  */
+
 .u-before1of12 {
   margin-left: 8.33333% !important;
 }
+
 .u-before1of10 {
   margin-left: 10% !important;
 }
+
 .u-before1of8 {
   margin-left: 12.5% !important;
 }
+
 .u-before1of6,
 .u-before2of12 {
   margin-left: 16.66667% !important;
 }
+
 .u-before1of5,
 .u-before2of10 {
   margin-left: 20% !important;
 }
+
 .u-before1of4,
 .u-before2of8,
 .u-before3of12 {
   margin-left: 25% !important;
 }
+
 .u-before3of10 {
   margin-left: 30% !important;
 }
+
 .u-before1of3,
 .u-before2of6,
 .u-before4of12 {
   margin-left: 33.33333% !important;
 }
+
 .u-before3of8 {
   margin-left: 37.5% !important;
 }
+
 .u-before2of5,
 .u-before4of10 {
   margin-left: 40% !important;
 }
+
 .u-before5of12 {
   margin-left: 41.66667% !important;
 }
+
 .u-before1of2,
 .u-before2of4,
 .u-before3of6,
@@ -700,46 +1313,58 @@
 .u-before6of12 {
   margin-left: 50% !important;
 }
+
 .u-before7of12 {
   margin-left: 58.33333% !important;
 }
+
 .u-before3of5,
 .u-before6of10 {
   margin-left: 60% !important;
 }
+
 .u-before5of8 {
   margin-left: 62.5% !important;
 }
+
 .u-before2of3,
 .u-before4of6,
 .u-before8of12 {
   margin-left: 66.66667% !important;
 }
+
 .u-before7of10 {
   margin-left: 70% !important;
 }
+
 .u-before3of4,
 .u-before6of8,
 .u-before9of12 {
   margin-left: 75% !important;
 }
+
 .u-before4of5,
 .u-before8of10 {
   margin-left: 80% !important;
 }
+
 .u-before5of6,
 .u-before10of12 {
   margin-left: 83.33333% !important;
 }
+
 .u-before7of8 {
   margin-left: 87.5% !important;
 }
+
 .u-before9of10 {
   margin-left: 90% !important;
 }
+
 .u-before11of12 {
   margin-left: 91.66667% !important;
 }
+
 /**
  * @define utilities
  * Offset: breakpoint 1 (small)
@@ -748,7 +1373,8 @@
  * Intentional redundancy build into each set of unit classes.
  * Supports: 2, 3, 4, 5, 6, 8, 10, 12 section
  */
-@media (min-width:320px) {
+
+@media (min-width:40em) {
 
   .u-sm-beforeNone {
     margin-left: 0 !important;
@@ -866,6 +1492,7 @@
   }
 
 }
+
 /**
  * @define utilities
  * Offset: breakpoint 2 (medium)
@@ -874,7 +1501,8 @@
  * Intentional redundancy build into each set of unit classes.
  * Supports: 2, 3, 4, 5, 6, 8, 10, 12 section
  */
-@media (min-width:640px) {
+
+@media (min-width:60em) {
 
   .u-md-beforeNone {
     margin-left: 0 !important;
@@ -992,6 +1620,7 @@
   }
 
 }
+
 /**
  * @define utilities
  * Offset: breakpoint 3 (large)
@@ -1000,7 +1629,8 @@
  * Intentional redundancy build into each set of unit classes.
  * Supports: 2, 3, 4, 5, 6, 8, 10, 12 section
  */
-@media (min-width:960px) {
+
+@media (min-width:80em) {
 
   .u-lg-beforeNone {
     margin-left: 0 !important;
@@ -1118,16 +1748,20 @@
   }
 
 }
+
 /** @define utilities */
+
 .u-posFit,
 .u-posAbsoluteCenter,
 .u-posAbsolute {
   position: absolute !important;
 }
+
 /**
  * Element will be centered to its nearest relatively-positioned
  * ancestor.
  */
+
 .u-posFixedCenter,
 .u-posAbsoluteCenter {
   left: 50% !important;
@@ -1135,6 +1769,7 @@
   -webkit-transform: translate(-50%, -50%) !important;
           transform: translate(-50%, -50%) !important;
 }
+
 .u-posFit,
 .u-posFullScreen {
   bottom: 0 !important;
@@ -1143,10 +1778,12 @@
   right: 0 !important;
   top: 0 !important;
 }
+
 /**
  * 1. Make sure fixed elements are promoted into a new layer, for performance
  *    reasons.
  */
+
 .u-posFullScreen,
 .u-posFixedCenter,
 .u-posFixed {
@@ -1154,18 +1791,23 @@
           backface-visibility: hidden; /* 1 */
   position: fixed !important;
 }
+
 .u-posRelative {
   position: relative !important;
 }
+
 .u-posStatic {
   position: static !important;
 }
+
 /**
  * @define utilities
  * Sizing utilities
  */
+
 /* Proportional widths
    ========================================================================== */
+
 /**
  * Specify the proportional width of an object.
  * Intentional redundancy build into each set of unit classes.
@@ -1174,33 +1816,39 @@
  * 1. Use `flex-basis: auto` with a width to avoid box-sizing bug in IE10/11
  *    http://git.io/vllMD
  */
+
 .u-size1of12 {
   -ms-flex-preferred-size: auto !important;
       flex-basis: auto !important;
   width: 8.33333% !important;
 }
+
 .u-size1of10 {
   -ms-flex-preferred-size: auto !important;
       flex-basis: auto !important;
   width: 10% !important;
 }
+
 .u-size1of8 {
   -ms-flex-preferred-size: auto !important;
       flex-basis: auto !important;
   width: 12.5% !important;
 }
+
 .u-size1of6,
 .u-size2of12 {
   -ms-flex-preferred-size: auto !important;
       flex-basis: auto !important;
   width: 16.66667% !important;
 }
+
 .u-size1of5,
 .u-size2of10 {
   -ms-flex-preferred-size: auto !important;
       flex-basis: auto !important;
   width: 20% !important;
 }
+
 .u-size1of4,
 .u-size2of8,
 .u-size3of12 {
@@ -1208,11 +1856,13 @@
       flex-basis: auto !important;
   width: 25% !important;
 }
+
 .u-size3of10 {
   -ms-flex-preferred-size: auto !important;
       flex-basis: auto !important;
   width: 30% !important;
 }
+
 .u-size1of3,
 .u-size2of6,
 .u-size4of12 {
@@ -1220,22 +1870,26 @@
       flex-basis: auto !important;
   width: 33.33333% !important;
 }
+
 .u-size3of8 {
   -ms-flex-preferred-size: auto !important;
       flex-basis: auto !important;
   width: 37.5% !important;
 }
+
 .u-size2of5,
 .u-size4of10 {
   -ms-flex-preferred-size: auto !important;
       flex-basis: auto !important;
   width: 40% !important;
 }
+
 .u-size5of12 {
   -ms-flex-preferred-size: auto !important;
       flex-basis: auto !important;
   width: 41.66667% !important;
 }
+
 .u-size1of2,
 .u-size2of4,
 .u-size3of6,
@@ -1246,22 +1900,26 @@
       flex-basis: auto !important;
   width: 50% !important;
 }
+
 .u-size7of12 {
   -ms-flex-preferred-size: auto !important;
       flex-basis: auto !important;
   width: 58.33333% !important;
 }
+
 .u-size3of5,
 .u-size6of10 {
   -ms-flex-preferred-size: auto !important;
       flex-basis: auto !important;
   width: 60% !important;
 }
+
 .u-size5of8 {
   -ms-flex-preferred-size: auto !important;
       flex-basis: auto !important;
   width: 62.5% !important;
 }
+
 .u-size2of3,
 .u-size4of6,
 .u-size8of12 {
@@ -1269,11 +1927,13 @@
       flex-basis: auto !important;
   width: 66.66667% !important;
 }
+
 .u-size7of10 {
   -ms-flex-preferred-size: auto !important;
       flex-basis: auto !important;
   width: 70% !important;
 }
+
 .u-size3of4,
 .u-size6of8,
 .u-size9of12 {
@@ -1281,42 +1941,51 @@
       flex-basis: auto !important;
   width: 75% !important;
 }
+
 .u-size4of5,
 .u-size8of10 {
   -ms-flex-preferred-size: auto !important;
       flex-basis: auto !important;
   width: 80% !important;
 }
+
 .u-size5of6,
 .u-size10of12 {
   -ms-flex-preferred-size: auto !important;
       flex-basis: auto !important;
   width: 83.33333% !important;
 }
+
 .u-size7of8 {
   -ms-flex-preferred-size: auto !important;
       flex-basis: auto !important;
   width: 87.5% !important;
 }
+
 .u-size9of10 {
   -ms-flex-preferred-size: auto !important;
       flex-basis: auto !important;
   width: 90% !important;
 }
+
 .u-size11of12 {
   -ms-flex-preferred-size: auto !important;
       flex-basis: auto !important;
   width: 91.66667% !important;
 }
+
 /* Intrinsic widths
    ========================================================================== */
+
 /**
  * Make an element shrink wrap its content.
  */
+
 .u-sizeFit {
   -ms-flex-preferred-size: auto !important;
       flex-basis: auto !important;
 }
+
 /**
  * Make an element fill the remaining space.
  *
@@ -1325,6 +1994,7 @@
  * 2. IE10 ignores previous `flex-basis` value. Setting again here fixes
  *    http://git.io/vllMt
  */
+
 .u-sizeFill {
   -webkit-box-flex: 1 !important;
       -ms-flex: 1 1 0% !important;
@@ -1332,12 +2002,14 @@
   -ms-flex-preferred-size: 0% !important;
       flex-basis: 0% !important; /* 2 */
 }
+
 /**
  * An alternative method to make an element fill the remaining space.
  * Distributes space based on the initial width and height of the element
  *
  * http://www.w3.org/TR/css-flexbox/images/rel-vs-abs-flex.svg
  */
+
 .u-sizeFillAlt {
   -webkit-box-flex: 1 !important;
       -ms-flex: 1 1 auto !important;
@@ -1345,17 +2017,21 @@
   -ms-flex-preferred-size: auto !important;
       flex-basis: auto !important;
 }
+
 /**
  * Make an element the width of its parent.
  */
+
 .u-sizeFull {
   width: 100% !important;
 }
+
 /**
  * @define utilities
  * Size: breakpoint 1 (small)
  */
-@media (min-width:320px) {
+
+@media (min-width:40em) {
 
   /* Proportional widths: breakpoint 1 (small)
      ======================================================================== */
@@ -1579,11 +2255,13 @@
   }
 
 }
+
 /**
  * @define utilities
  * Size: breakpoint 2 (medium)
  */
-@media (min-width:640px) {
+
+@media (min-width:60em) {
 
   /* Proportional widths: breakpoint 2 (medium)
      ======================================================================== */
@@ -1809,11 +2487,13 @@
   }
 
 }
+
 /**
  * @define utilities
  * Size: breakpoint 3 (large)
  */
-@media (min-width:960px) {
+
+@media (min-width:80em) {
 
   /* Proportional widths: breakpoint 3 (large)
      ======================================================================== */
@@ -2037,32 +2717,41 @@
   }
 
 }
+
 /**
  * Word breaking
  *
  * Break strings when their length exceeds the width of their container.
  */
+
 .u-textBreak {
   word-wrap: break-word !important;
 }
+
 /**
  * Horizontal text alignment
  */
+
 .u-textCenter {
   text-align: center !important;
 }
+
 .u-textLeft {
   text-align: left !important;
 }
+
 .u-textRight {
   text-align: right !important;
 }
+
 /**
  * Inherit the ancestor's text color.
  */
+
 .u-textInheritColor {
   color: inherit !important;
 }
+
 /**
  * Enables font kerning in all browsers.
  * http://blog.typekit.com/2014/02/05/kerning-on-the-web/
@@ -2071,6 +2760,7 @@
  * 2. Safari 7 and future browsers
  * 3. Chrome (not Windows), Firefox, Safari 6+, iOS, Android
  */
+
 .u-textKern {
   -webkit-font-feature-settings: "kern" 1, "kern";
           font-feature-settings: "kern" 1, "kern"; /* 1 */
@@ -2078,12 +2768,15 @@
           font-kerning: normal; /* 2 */
   text-rendering: optimizeLegibility; /* 3 */
 }
+
 /**
  * Prevent whitespace wrapping
  */
+
 .u-textNoWrap {
   white-space: nowrap !important;
 }
+
 /**
  * Text truncation
  *
@@ -2095,6 +2788,7 @@
  * 2. Fix for IE 8/9 if `word-wrap: break-word` is in effect on ancestor
  *    nodes.
  */
+
 .u-textTruncate {
   max-width: 100%; /* 1 */
   overflow: hidden !important;
@@ -2102,212 +2796,250 @@
   white-space: nowrap !important;
   word-wrap: normal !important; /* 2 */
 }
+
 /** @define utilities */
+
 /* Applies to flex container
    ========================================================================== */
+
 /**
  * Container
  */
+
 .u-flex {
   display: -webkit-box !important;
   display: -ms-flexbox !important;
   display: flex !important;
 }
+
 .u-flexInline {
   display: -webkit-inline-box !important;
   display: -ms-inline-flexbox !important;
   display: inline-flex !important;
 }
+
 /**
  * Direction: row
  */
+
 .u-flexRow {
   -webkit-box-orient: horizontal !important;
   -webkit-box-direction: normal !important;
       -ms-flex-direction: row !important;
           flex-direction: row !important;
 }
+
 .u-flexRowReverse {
   -webkit-box-orient: horizontal !important;
   -webkit-box-direction: reverse !important;
       -ms-flex-direction: row-reverse !important;
           flex-direction: row-reverse !important;
 }
+
 /**
  * Direction: column
  */
+
 .u-flexCol {
   -webkit-box-orient: vertical !important;
   -webkit-box-direction: normal !important;
       -ms-flex-direction: column !important;
           flex-direction: column !important;
 }
+
 .u-flexColReverse {
   -webkit-box-orient: vertical !important;
   -webkit-box-direction: reverse !important;
       -ms-flex-direction: column-reverse !important;
           flex-direction: column-reverse !important;
 }
+
 /**
  * Wrap
  */
+
 .u-flexWrap {
   -ms-flex-wrap: wrap !important;
       flex-wrap: wrap !important;
 }
+
 .u-flexNoWrap {
   -ms-flex-wrap: nowrap !important;
       flex-wrap: nowrap !important;
 }
+
 .u-flexWrapReverse {
   -ms-flex-wrap: wrap-reverse !important;
       flex-wrap: wrap-reverse !important;
 }
+
 /**
  * Align items along the main axis of the current line of the flex container
  */
+
 .u-flexJustifyStart {
   -webkit-box-pack: start !important;
       -ms-flex-pack: start !important;
           justify-content: flex-start !important;
 }
+
 .u-flexJustifyEnd {
   -webkit-box-pack: end !important;
       -ms-flex-pack: end !important;
           justify-content: flex-end !important;
 }
+
 .u-flexJustifyCenter {
   -webkit-box-pack: center !important;
       -ms-flex-pack: center !important;
           justify-content: center !important;
 }
+
 .u-flexJustifyBetween {
   -webkit-box-pack: justify !important;
       -ms-flex-pack: justify !important;
           justify-content: space-between !important;
 }
+
 .u-flexJustifyAround {
   -ms-flex-pack: distribute !important;
       justify-content: space-around !important;
 }
+
 /**
  * Align items in the cross axis of the current line of the flex container
  * Similar to `justify-content` but in the perpendicular direction
  */
+
 .u-flexAlignItemsStart {
   -webkit-box-align: start !important;
       -ms-flex-align: start !important;
           align-items: flex-start !important;
 }
+
 .u-flexAlignItemsEnd {
   -webkit-box-align: end !important;
       -ms-flex-align: end !important;
           align-items: flex-end !important;
 }
+
 .u-flexAlignItemsCenter {
   -webkit-box-align: center !important;
       -ms-flex-align: center !important;
           align-items: center !important;
 }
+
 .u-flexAlignItemsStretch {
   -webkit-box-align: stretch !important;
       -ms-flex-align: stretch !important;
           align-items: stretch !important;
 }
+
 .u-flexAlignItemsBaseline {
   -webkit-box-align: baseline !important;
       -ms-flex-align: baseline !important;
           align-items: baseline !important;
 }
+
 /**
  * Aligns items within the flex container when there is extra
  * space in the cross-axis
  *
  * Has no effect when there is only one line of flex items.
  */
+
 .u-flexAlignContentStart {
   -ms-flex-line-pack: start !important;
       align-content: flex-start !important;
 }
+
 .u-flexAlignContentEnd {
   -ms-flex-line-pack: end !important;
       align-content: flex-end !important;
 }
+
 .u-flexAlignContentCenter {
   -ms-flex-line-pack: center !important;
       align-content: center !important;
 }
+
 .u-flexAlignContentStretch {
   -ms-flex-line-pack: stretch !important;
       align-content: stretch !important;
 }
+
 .u-flexAlignContentBetween {
   -ms-flex-line-pack: justify !important;
       align-content: space-between !important;
 }
+
 .u-flexAlignContentAround {
   -ms-flex-line-pack: distribute !important;
       align-content: space-around !important;
 }
-/**
- * 1. Set the flex-shrink default explicitly to fix IE10 - http://git.io/vllC7
- */
-/* postcss-bem-linter: ignore */
-.u-flex > *,
-.u-flexInline > * {
-  -ms-flex-negative: 1;
-      flex-shrink: 1; /* 1 */
-}
+
 /* Applies to flex items
    ========================================================================== */
+
 /**
  * Override default alignment of single item when specified by `align-items`
  */
+
 .u-flexAlignSelfStart {
   -ms-flex-item-align: start !important;
       align-self: flex-start !important;
 }
+
 .u-flexAlignSelfEnd {
   -ms-flex-item-align: end !important;
       align-self: flex-end !important;
 }
+
 .u-flexAlignSelfCenter {
   -ms-flex-item-align: center !important;
       -ms-grid-row-align: center !important;
       align-self: center !important;
 }
+
 .u-flexAlignSelfStretch {
   -ms-flex-item-align: stretch !important;
       -ms-grid-row-align: stretch !important;
       align-self: stretch !important;
 }
+
 .u-flexAlignSelfBaseline {
   -ms-flex-item-align: baseline !important;
       align-self: baseline !important;
 }
+
 .u-flexAlignSelfAuto {
   -ms-flex-item-align: auto !important;
       -ms-grid-row-align: auto !important;
       align-self: auto !important;
 }
+
 /**
  * Change order without editing underlying HTML
  */
+
 .u-flexOrderFirst {
   -webkit-box-ordinal-group: 0 !important;
       -ms-flex-order: -1 !important;
           order: -1 !important;
 }
+
 .u-flexOrderLast {
   -webkit-box-ordinal-group: 2 !important;
       -ms-flex-order: 1 !important;
           order: 1 !important;
 }
+
 .u-flexOrderNone {
   -webkit-box-ordinal-group: 1 !important;
       -ms-flex-order: 0 !important;
           order: 0 !important;
 }
+
 /**
  * Specify the flex grow factor, which determines how much the flex item will
  * grow relative to the rest of the flex items in the flex container.
@@ -2321,55 +3053,166 @@
  *    instead of `auto` as this matches what the default would be with `flex`
  *    shorthand - http://git.io/vllWx
  */
+
 .u-flexGrow1 {
   -webkit-box-flex: 1 !important;
       -ms-flex: 1 1 0% !important;
           flex: 1 1 0% !important; /* 1 */
 }
+
 .u-flexGrow2 {
   -webkit-box-flex: 2 !important;
       -ms-flex: 2 1 0% !important;
           flex: 2 1 0% !important;
 }
+
 .u-flexGrow3 {
   -webkit-box-flex: 3 !important;
       -ms-flex: 3 1 0% !important;
           flex: 3 1 0% !important;
 }
+
 .u-flexGrow4 {
   -webkit-box-flex: 4 !important;
       -ms-flex: 4 1 0% !important;
           flex: 4 1 0% !important;
 }
+
 .u-flexGrow5 {
   -webkit-box-flex: 5 !important;
       -ms-flex: 5 1 0% !important;
           flex: 5 1 0% !important;
 }
+
+/**
+ * Specify the flex shrink factor, which determines how much the flex item will
+ * shrink relative to the rest of the flex items in the flex container.
+ */
+
+.u-flexShrink0 {
+  -ms-flex-negative: 0 !important;
+      flex-shrink: 0 !important;
+}
+
+.u-flexShrink1 {
+  -ms-flex-negative: 1 !important;
+      flex-shrink: 1 !important;
+}
+
+.u-flexShrink2 {
+  -ms-flex-negative: 2 !important;
+      flex-shrink: 2 !important;
+}
+
+.u-flexShrink3 {
+  -ms-flex-negative: 3 !important;
+      flex-shrink: 3 !important;
+}
+
+.u-flexShrink4 {
+  -ms-flex-negative: 4 !important;
+      flex-shrink: 4 !important;
+}
+
+.u-flexShrink5 {
+  -ms-flex-negative: 5 !important;
+      flex-shrink: 5 !important;
+}
+
 /**
  * Aligning with `auto` margins
  * http://www.w3.org/TR/css-flexbox-1/#auto-margins
  */
+
 .u-flexExpand {
   margin: auto !important;
 }
+
 .u-flexExpandLeft {
   margin-left: auto !important;
 }
+
 .u-flexExpandRight {
   margin-right: auto !important;
 }
+
 .u-flexExpandTop {
   margin-top: auto !important;
 }
+
 .u-flexExpandBottom {
   margin-bottom: auto !important;
 }
+
+/**
+ * Basis
+ */
+
+.u-flexBasisAuto {
+  -ms-flex-preferred-size: auto !important;
+      flex-basis: auto !important;
+}
+
+.u-flexBasis0 {
+  -ms-flex-preferred-size: 0 !important;
+      flex-basis: 0 !important;
+}
+
+/*
+ * Shorthand
+ *
+ * Declares all values instead of keywords like 'initial' to work around IE10
+ * https://www.w3.org/TR/css-flexbox-1/#flex-common
+ *
+ * 1. Fixes issue in IE 10 where flex-basis is ignored - https://git.io/vllMt
+ *    This ensures it overrides flex-basis set in other utilities.
+ */
+
+/*
+ * Sizes the item based on the width/height properties
+ */
+
+.u-flexInitial {
+  -webkit-box-flex: 0 !important;
+      -ms-flex: 0 1 auto !important;
+          flex: 0 1 auto !important;
+  -ms-flex-preferred-size: auto !important;
+      flex-basis: auto !important; /* 1 */
+}
+
+/*
+ * Sizes the item based on the width/height properties, but makes them fully
+ * flexible, so that they absorb any free space along the main axis.
+ */
+
+.u-flexAuto {
+  -webkit-box-flex: 1 !important;
+      -ms-flex: 1 1 auto !important;
+          flex: 1 1 auto !important;
+  -ms-flex-preferred-size: auto !important;
+      flex-basis: auto !important; /* 1 */
+}
+
+/*
+ * Sizes the item according to the width/height properties, but makes the flex
+ * item fully inflexible. Similar to initial, except that flex items are
+ * not allowed to shrink, even in overflow situations.
+ */
+
+.u-flexNone {
+  -webkit-box-flex: 0 !important;
+      -ms-flex: 0 0 auto !important;
+          flex: 0 0 auto !important;
+  -ms-flex-preferred-size: auto !important;
+      flex-basis: auto !important; /* 1 */
+}
+
 /**
  * @define utilities
  * Size: breakpoint 1 (small)
  */
-@media (min-width:320px) {
+
+@media (min-width:40em) {
 
   /* Applies to flex container
      ======================================================================== */
@@ -2550,18 +3393,6 @@
         align-content: space-around !important;
   }
 
-  /**
-   * 1. Set the flex-shrink default explicitly to fix IE10 - http://git.io/vllC7
-   */
-
-  /* postcss-bem-linter: ignore */
-
-  .u-sm-flex > *,
-  .u-sm-flexInline > * {
-    -ms-flex-negative: 1;
-        flex-shrink: 1; /* 1 */
-  }
-
   /* Applies to flex items
      ======================================================================== */
 
@@ -2668,6 +3499,41 @@
   }
 
   /**
+   * Specify the flex shrink factor, which determines how much the flex item
+   * will shrink relative to the rest of the flex items in the flex container.
+   */
+
+  .u-sm-flexShrink0 {
+    -ms-flex-negative: 0 !important;
+        flex-shrink: 0 !important;
+  }
+
+  .u-sm-flexShrink1 {
+    -ms-flex-negative: 1 !important;
+        flex-shrink: 1 !important;
+  }
+
+  .u-sm-flexShrink2 {
+    -ms-flex-negative: 2 !important;
+        flex-shrink: 2 !important;
+  }
+
+  .u-sm-flexShrink3 {
+    -ms-flex-negative: 3 !important;
+        flex-shrink: 3 !important;
+  }
+
+  .u-sm-flexShrink4 {
+    -ms-flex-negative: 4 !important;
+        flex-shrink: 4 !important;
+  }
+
+  .u-sm-flexShrink5 {
+    -ms-flex-negative: 5 !important;
+        flex-shrink: 5 !important;
+  }
+
+  /**
    * Aligning with `auto` margins
    * http://www.w3.org/TR/css-flexbox-1/#auto-margins
    */
@@ -2692,12 +3558,77 @@
     margin-bottom: auto !important;
   }
 
+  /**
+   * Basis
+   */
+
+  .u-sm-flexBasisAuto {
+    -ms-flex-preferred-size: auto !important;
+        flex-basis: auto !important;
+  }
+
+  .u-sm-flexBasis0 {
+    -ms-flex-preferred-size: 0 !important;
+        flex-basis: 0 !important;
+  }
+
+  /*
+   * Shorthand
+   *
+   * Declares all values instead of keywords like 'initial' to work around IE10
+   * https://www.w3.org/TR/css-flexbox-1/#flex-common
+   *
+   * 1. Fixes issue in IE 10 where flex-basis is ignored - https://git.io/vllMt
+   *    This ensures it overrides flex-basis set in other utilities.
+   */
+
+  /*
+   * Sizes the item based on the width/height properties
+   */
+
+  .u-sm-flexInitial {
+    -webkit-box-flex: 0 !important;
+        -ms-flex: 0 1 auto !important;
+            flex: 0 1 auto !important;
+    -ms-flex-preferred-size: auto !important;
+        flex-basis: auto !important; /* 1 */
+  }
+
+  /*
+   * Sizes the item based on the width/height properties, but makes them fully
+   * flexible, so that they absorb any free space along the main axis.
+   */
+
+  .u-sm-flexAuto {
+    -webkit-box-flex: 1 !important;
+        -ms-flex: 1 1 auto !important;
+            flex: 1 1 auto !important;
+    -ms-flex-preferred-size: auto !important;
+        flex-basis: auto !important; /* 1 */
+  }
+
+  /*
+   * Sizes the item according to the width/height properties, but makes the flex
+   * item fully inflexible. Similar to initial, except that flex items are
+   * not allowed to shrink, even in overflow situations.
+   */
+
+  .u-sm-flexNone {
+    -webkit-box-flex: 0 !important;
+        -ms-flex: 0 0 auto !important;
+            flex: 0 0 auto !important;
+    -ms-flex-preferred-size: auto !important;
+        flex-basis: auto !important; /* 1 */
+  }
+
 }
+
 /**
  * @define utilities
  * Size: breakpoint 1 (medium)
  */
-@media (min-width:640px) {
+
+@media (min-width:60em) {
 
   /* Applies to flex container
      ======================================================================== */
@@ -2878,18 +3809,6 @@
         align-content: space-around !important;
   }
 
-  /**
-   * 1. Set the flex-shrink default explicitly to fix IE10 - http://git.io/vllC7
-   */
-
-  /* postcss-bem-linter: ignore */
-
-  .u-md-flex > *,
-  .u-md-flexInline > * {
-    -ms-flex-negative: 1;
-        flex-shrink: 1; /* 1 */
-  }
-
   /* Applies to flex items
      ======================================================================== */
 
@@ -2996,6 +3915,41 @@
   }
 
   /**
+   * Specify the flex shrink factor, which determines how much the flex item
+   * will shrink relative to the rest of the flex items in the flex container.
+   */
+
+  .u-md-flexShrink0 {
+    -ms-flex-negative: 0 !important;
+        flex-shrink: 0 !important;
+  }
+
+  .u-md-flexShrink1 {
+    -ms-flex-negative: 1 !important;
+        flex-shrink: 1 !important;
+  }
+
+  .u-md-flexShrink2 {
+    -ms-flex-negative: 2 !important;
+        flex-shrink: 2 !important;
+  }
+
+  .u-md-flexShrink3 {
+    -ms-flex-negative: 3 !important;
+        flex-shrink: 3 !important;
+  }
+
+  .u-md-flexShrink4 {
+    -ms-flex-negative: 4 !important;
+        flex-shrink: 4 !important;
+  }
+
+  .u-md-flexShrink5 {
+    -ms-flex-negative: 5 !important;
+        flex-shrink: 5 !important;
+  }
+
+  /**
    * Aligning with `auto` margins
    * http://www.w3.org/TR/css-flexbox-1/#auto-margins
    */
@@ -3020,12 +3974,77 @@
     margin-bottom: auto !important;
   }
 
+  /**
+   * Basis
+   */
+
+  .u-md-flexBasisAuto {
+    -ms-flex-preferred-size: auto !important;
+        flex-basis: auto !important;
+  }
+
+  .u-md-flexBasis0 {
+    -ms-flex-preferred-size: 0 !important;
+        flex-basis: 0 !important;
+  }
+
+  /*
+   * Shorthand
+   *
+   * Declares all values instead of keywords like 'initial' to work around IE10
+   * https://www.w3.org/TR/css-flexbox-1/#flex-common
+   *
+   * 1. Fixes issue in IE 10 where flex-basis is ignored - https://git.io/vllMt
+   *    This ensures it overrides flex-basis set in other utilities.
+   */
+
+  /*
+   * Sizes the item based on the width/height properties
+   */
+
+  .u-md-flexInitial {
+    -webkit-box-flex: 0 !important;
+        -ms-flex: 0 1 auto !important;
+            flex: 0 1 auto !important;
+    -ms-flex-preferred-size: auto !important;
+        flex-basis: auto !important; /* 1 */
+  }
+
+  /*
+   * Sizes the item based on the width/height properties, but makes them fully
+   * flexible, so that they absorb any free space along the main axis.
+   */
+
+  .u-md-flexAuto {
+    -webkit-box-flex: 1 !important;
+        -ms-flex: 1 1 auto !important;
+            flex: 1 1 auto !important;
+    -ms-flex-preferred-size: auto !important;
+        flex-basis: auto !important; /* 1 */
+  }
+
+  /*
+   * Sizes the item according to the width/height properties, but makes the flex
+   * item fully inflexible. Similar to initial, except that flex items are
+   * not allowed to shrink, even in overflow situations.
+   */
+
+  .u-md-flexNone {
+    -webkit-box-flex: 0 !important;
+        -ms-flex: 0 0 auto !important;
+            flex: 0 0 auto !important;
+    -ms-flex-preferred-size: auto !important;
+        flex-basis: auto !important; /* 1 */
+  }
+
 }
+
 /**
  * @define utilities
  * Size: breakpoint 1 (large)
  */
-@media (min-width:960px) {
+
+@media (min-width:80em) {
 
   /* Applies to flex container
      ======================================================================== */
@@ -3206,18 +4225,6 @@
         align-content: space-around !important;
   }
 
-  /**
-   * 1. Set the flex-shrink default explicitly to fix IE10 - http://git.io/vllC7
-   */
-
-  /* postcss-bem-linter: ignore */
-
-  .u-lg-flex > *,
-  .u-lg-flexInline > * {
-    -ms-flex-negative: 1;
-        flex-shrink: 1; /* 1 */
-  }
-
   /* Applies to flex items
      ======================================================================== */
 
@@ -3324,6 +4331,41 @@
   }
 
   /**
+   * Specify the flex shrink factor, which determines how much the flex item
+   * will shrink relative to the rest of the flex items in the flex container.
+   */
+
+  .u-lg-flexShrink0 {
+    -ms-flex-negative: 0 !important;
+        flex-shrink: 0 !important;
+  }
+
+  .u-lg-flexShrink1 {
+    -ms-flex-negative: 1 !important;
+        flex-shrink: 1 !important;
+  }
+
+  .u-lg-flexShrink2 {
+    -ms-flex-negative: 2 !important;
+        flex-shrink: 2 !important;
+  }
+
+  .u-lg-flexShrink3 {
+    -ms-flex-negative: 3 !important;
+        flex-shrink: 3 !important;
+  }
+
+  .u-lg-flexShrink4 {
+    -ms-flex-negative: 4 !important;
+        flex-shrink: 4 !important;
+  }
+
+  .u-lg-flexShrink5 {
+    -ms-flex-negative: 5 !important;
+        flex-shrink: 5 !important;
+  }
+
+  /**
    * Aligning with `auto` margins
    * http://www.w3.org/TR/css-flexbox-1/#auto-margins
    */
@@ -3348,423 +4390,80 @@
     margin-bottom: auto !important;
   }
 
+  /**
+   * Basis
+   */
+
+  .u-lg-flexBasisAuto {
+    -ms-flex-preferred-size: auto !important;
+        flex-basis: auto !important;
+  }
+
+  .u-lg-flexBasis0 {
+    -ms-flex-preferred-size: 0 !important;
+        flex-basis: 0 !important;
+  }
+
+  /*
+   * Shorthand
+   *
+   * Declares all values instead of keywords like 'initial' to work around IE10
+   * https://www.w3.org/TR/css-flexbox-1/#flex-common
+   *
+   * 1. Fixes issue in IE 10 where flex-basis is ignored - https://git.io/vllMt
+   *    This ensures it overrides flex-basis set in other utilities.
+   */
+
+  /*
+   * Sizes the item based on the width/height properties
+   */
+
+  .u-lg-flexInitial {
+    -webkit-box-flex: 0 !important;
+        -ms-flex: 0 1 auto !important;
+            flex: 0 1 auto !important;
+    -ms-flex-preferred-size: auto !important;
+        flex-basis: auto !important; /* 1 */
+  }
+
+  /*
+   * Sizes the item based on the width/height properties, but makes them fully
+   * flexible, so that they absorb any free space along the main axis.
+   */
+
+  .u-lg-flexAuto {
+    -webkit-box-flex: 1 !important;
+        -ms-flex: 1 1 auto !important;
+            flex: 1 1 auto !important;
+    -ms-flex-preferred-size: auto !important;
+        flex-basis: auto !important; /* 1 */
+  }
+
+  /*
+   * Sizes the item according to the width/height properties, but makes the flex
+   * item fully inflexible. Similar to initial, except that flex items are
+   * not allowed to shrink, even in overflow situations.
+   */
+
+  .u-lg-flexNone {
+    -webkit-box-flex: 0 !important;
+        -ms-flex: 0 0 auto !important;
+            flex: 0 0 auto !important;
+    -ms-flex-preferred-size: auto !important;
+        flex-basis: auto !important; /* 1 */
+  }
+
 }
-/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
-/**
- * 1. Set default font family to sans-serif.
- * 2. Prevent iOS and IE text size adjust after device orientation change,
- *    without disabling user zoom.
- */
-html {
-  font-family: sans-serif; /* 1 */
-  -ms-text-size-adjust: 100%; /* 2 */
-  -webkit-text-size-adjust: 100%; /* 2 */
-}
-/**
- * Remove default margin.
- */
-body {
-  margin: 0;
-}
-/* HTML5 display definitions
-   ========================================================================== */
-/**
- * Correct `block` display not defined for any HTML5 element in IE 8/9.
- * Correct `block` display not defined for `details` or `summary` in IE 10/11
- * and Firefox.
- * Correct `block` display not defined for `main` in IE 11.
- */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-main,
-menu,
-nav,
-section,
-summary {
-  display: block;
-}
-/**
- * 1. Correct `inline-block` display not defined in IE 8/9.
- * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
- */
-audio,
-canvas,
-progress,
-video {
-  display: inline-block; /* 1 */
-  vertical-align: baseline; /* 2 */
-}
-/**
- * Prevent modern browsers from displaying `audio` without controls.
- * Remove excess height in iOS 5 devices.
- */
-audio:not([controls]) {
-  display: none;
-  height: 0;
-}
-/**
- * Address `[hidden]` styling not present in IE 8/9/10.
- * Hide the `template` element in IE 8/9/10/11, Safari, and Firefox < 22.
- */
-[hidden],
-template {
-  display: none;
-}
-/* Links
-   ========================================================================== */
-/**
- * Remove the gray background color from active links in IE 10.
- */
-a {
-  background-color: transparent;
-}
-/**
- * Improve readability of focused elements when they are also in an
- * active/hover state.
- */
-a:active,
-a:hover {
-  outline: 0;
-}
-/* Text-level semantics
-   ========================================================================== */
-/**
- * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
- */
-abbr[title] {
-  border-bottom: 1px dotted;
-}
-/**
- * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
- */
-b,
-strong {
-  font-weight: bold;
-}
-/**
- * Address styling not present in Safari and Chrome.
- */
-dfn {
-  font-style: italic;
-}
-/**
- * Address variable `h1` font-size and margin within `section` and `article`
- * contexts in Firefox 4+, Safari, and Chrome.
- */
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-}
-/**
- * Address styling not present in IE 8/9.
- */
-mark {
-  background: #ff0;
-  color: #000;
-}
-/**
- * Address inconsistent and variable font size in all browsers.
- */
-small {
-  font-size: 80%;
-}
-/**
- * Prevent `sub` and `sup` affecting `line-height` in all browsers.
- */
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-sup {
-  top: -0.5em;
-}
-sub {
-  bottom: -0.25em;
-}
-/* Embedded content
-   ========================================================================== */
-/**
- * Remove border when inside `a` element in IE 8/9/10.
- */
-img {
-  border: 0;
-}
-/**
- * Correct overflow not hidden in IE 9/10/11.
- */
-svg:not(:root) {
-  overflow: hidden;
-}
-/* Grouping content
-   ========================================================================== */
-/**
- * Address margin not present in IE 8/9 and Safari.
- */
-figure {
-  margin: 1em 40px;
-}
-/**
- * Address differences between Firefox and other browsers.
- */
-hr {
-  box-sizing: content-box;
-  height: 0;
-}
-/**
- * Contain overflow in all browsers.
- */
-pre {
-  overflow: auto;
-}
-/**
- * Address odd `em`-unit font size rendering in all browsers.
- */
-code,
-kbd,
-pre,
-samp {
-  font-family: monospace, monospace;
-  font-size: 1em;
-}
-/* Forms
-   ========================================================================== */
-/**
- * Known limitation: by default, Chrome and Safari on OS X allow very limited
- * styling of `select`, unless a `border` property is set.
- */
-/**
- * 1. Correct color not being inherited.
- *    Known issue: affects color of disabled elements.
- * 2. Correct font properties not being inherited.
- * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
- */
-button,
-input,
-optgroup,
-select,
-textarea {
-  color: inherit; /* 1 */
-  font: inherit; /* 2 */
-  margin: 0; /* 3 */
-}
-/**
- * Address `overflow` set to `hidden` in IE 8/9/10/11.
- */
-button {
-  overflow: visible;
-}
-/**
- * Address inconsistent `text-transform` inheritance for `button` and `select`.
- * All other form control elements do not inherit `text-transform` values.
- * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
- * Correct `select` style inheritance in Firefox.
- */
-button,
-select {
-  text-transform: none;
-}
-/**
- * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
- *    and `video` controls.
- * 2. Correct inability to style clickable `input` types in iOS.
- * 3. Improve usability and consistency of cursor style between image-type
- *    `input` and others.
- */
-button,
-html input[type="button"], /* 1 */
-input[type="reset"],
-input[type="submit"] {
-  -webkit-appearance: button; /* 2 */
-  cursor: pointer; /* 3 */
-}
-/**
- * Re-set default cursor for disabled elements.
- */
-button[disabled],
-html input[disabled] {
-  cursor: default;
-}
-/**
- * Remove inner padding and border in Firefox 4+.
- */
-button::-moz-focus-inner,
-input::-moz-focus-inner {
-  border: 0;
-  padding: 0;
-}
-/**
- * Address Firefox 4+ setting `line-height` on `input` using `!important` in
- * the UA stylesheet.
- */
-input {
-  line-height: normal;
-}
-/**
- * It's recommended that you don't attempt to style these elements.
- * Firefox's implementation doesn't respect box-sizing, padding, or width.
- *
- * 1. Address box sizing set to `content-box` in IE 8/9/10.
- * 2. Remove excess padding in IE 8/9/10.
- */
-input[type="checkbox"],
-input[type="radio"] {
-  box-sizing: border-box; /* 1 */
-  padding: 0; /* 2 */
-}
-/**
- * Fix the cursor style for Chrome's increment/decrement buttons. For certain
- * `font-size` values of the `input`, it causes the cursor style of the
- * decrement button to change from `default` to `text`.
- */
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-  height: auto;
-}
-/**
- * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
- * 2. Address `box-sizing` set to `border-box` in Safari and Chrome.
- */
-input[type="search"] {
-  -webkit-appearance: textfield; /* 1 */
-  box-sizing: content-box; /* 2 */
-}
-/**
- * Remove inner padding and search cancel button in Safari and Chrome on OS X.
- * Safari (but not Chrome) clips the cancel button when the search input has
- * padding (and `textfield` appearance).
- */
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-/**
- * Define consistent border, margin, and padding.
- */
-fieldset {
-  border: 1px solid #c0c0c0;
-  margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em;
-}
-/**
- * 1. Correct `color` not being inherited in IE 8/9/10/11.
- * 2. Remove padding so people aren't caught out if they zero out fieldsets.
- */
-legend {
-  border: 0; /* 1 */
-  padding: 0; /* 2 */
-}
-/**
- * Remove default vertical scrollbar in IE 8/9/10/11.
- */
-textarea {
-  overflow: auto;
-}
-/**
- * Don't inherit the `font-weight` (applied by a rule above).
- * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
- */
-optgroup {
-  font-weight: bold;
-}
-/* Tables
-   ========================================================================== */
-/**
- * Remove most spacing between table cells.
- */
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-td,
-th {
-  padding: 0;
-}
-/**
- * A thin layer on top of normalize.css that provides a starting point more
- * suitable for web applications.
- */
-/**
- * Prevent margin and border from affecting element width.
- * https://goo.gl/pYtbK7
- * `input[type="search"]` overrides normalize.css more specific rule.
- */
-html {
-  box-sizing: border-box;
-}
-*,
-*::before,
-*::after,
-input[type="search"] {
-  box-sizing: inherit;
-}
-/**
- * Removes the default spacing and border for appropriate elements.
- */
-blockquote,
-dl,
-dd,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-figure,
-p,
-pre {
-  margin: 0;
-}
-button {
-  background: transparent;
-  border: 0;
-  padding: 0;
-}
-/**
- * Work around a Firefox/IE bug where the transparent `button` background
- * results in a loss of the default `button` focus styles.
- */
-button:focus {
-  outline: 1px dotted;
-  outline: 5px auto -webkit-focus-ring-color;
-}
-fieldset {
-  border: 0;
-  margin: 0;
-  padding: 0;
-}
-iframe {
-  border: 0;
-}
-ol,
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-/**
- * Suppress the focus outline on elements that cannot be accessed via keyboard.
- * This prevents an unwanted focus outline from appearing around elements that
- * might still respond to pointer events.
- */
-[tabindex="-1"]:focus {
-  outline: none !important;
-}
+
 /** @define Arrange; weak */
+
 /**
  * This component lets you lay out a row of cells in various ways. You can
  * specify whether a cell should be wide enough to fit its content, or take up
  * the remaining space in the row. It's also possible to give all cells an
  * equal width, and to control their vertical alignment.
  */
+
 /**
  * 1. Protect against the component expanding beyond the confines of its
  *    container if properties affecting the box-model are applied to the
@@ -3774,6 +4473,7 @@ ul {
  * 4. Make sure the component fills at least the full width of its parent.
  * 5. Reset the table-layout algorithm in case a component is nested.
  */
+
 .Arrange {
   box-sizing: border-box; /* 1 */
   display: table; /* 2 */
@@ -3782,6 +4482,7 @@ ul {
   padding: 0; /* 3 */
   table-layout: auto; /* 5 */
 }
+
 /**
  * There are three possible types of child. `sizeFill` will expand to fill all
  * of the remaining space not filled by `sizeFit` elements. `row` will begin a
@@ -3791,18 +4492,22 @@ ul {
  *    Margin has no effect when coupled with `display: table-cell`.
  * 2. All cells are top-aligned by default
  */
+
 .Arrange-sizeFill,
 .Arrange-sizeFit {
   display: table-cell;
   padding: 0; /* 1 */
   vertical-align: top; /* 2 */
 }
+
 /**
  * Make sure the main content block expands to fill the remaining space.
  */
+
 .Arrange-sizeFill {
   width: 100%;
 }
+
 /**
  * Where possible, protect against large images breaking the layout. Prevent them from
  * exceeding the width of the main content block by making them fluid.
@@ -3811,37 +4516,47 @@ ul {
  * and IE to constrain image dimensions for other layouts, large images will
  * need their width set to `100%`.
  */
+
 .Arrange-sizeFill img {
   height: auto;
   max-width: 100%;
 }
+
 /**
  * Defend against a side-effect of this layout pattern: images in
  * 'Arrange-sizeFit' cannot be fluid, otherwise they lose their ability to
  * provide size to a cell.
  */
+
 .Arrange-sizeFit img {
   max-width: none !important;
   width: auto !important;
 }
+
 /**
  * Start a new row context.
  */
+
 .Arrange-row {
   display: table-row;
 }
+
 /* Vertical alignment modifiers
    ========================================================================== */
+
 .Arrange--middle > .Arrange-sizeFill,
 .Arrange--middle > .Arrange-sizeFit {
   vertical-align: middle;
 }
+
 .Arrange--bottom > .Arrange-sizeFill,
 .Arrange--bottom > .Arrange-sizeFit {
   vertical-align: bottom;
 }
+
 /* Equal-width modifier
    ========================================================================== */
+
 /**
  * This layout algorithm will create equal-width table cells, irrespective of
  * the width of their content.
@@ -3849,10 +4564,12 @@ ul {
  * 1. The layout algorithm requires a set width to correctly calculate table
  *    cell width.
  */
+
 .Arrange--equal {
   table-layout: fixed;
   width: 100%; /* 1 */
 }
+
 /**
  * Give the cells an equal width. This value ensures that Arrange is still 100%
  * wide when gutters are used in conjunctions with equal-width cells.
@@ -3860,14 +4577,17 @@ ul {
  * It's recommended that only 'Arrange-sizeFill' be used for equal width cells.
  * Their inner images will automatically be responsive.
  */
+
 .Arrange--equal > .Arrange-sizeFill,
 .Arrange--equal > .Arrange-sizeFit,
 .Arrange--equal > .Arrange-row > .Arrange-sizeFill,
 .Arrange--equal > .Arrange-row > .Arrange-sizeFit {
   width: 1%;
 }
+
 /* Gutter modifier
    ========================================================================== */
+
 /**
  * Add a gutter between cells
  *
@@ -3875,21 +4595,26 @@ ul {
  * the viewport. Use padding on a container, or `overflow-x:hidden` to protect
  * against it.
  */
+
 .Arrange--withGutter {
   margin: 0 -5px;
 }
+
 .Arrange--withGutter > .Arrange-sizeFit,
 .Arrange--withGutter > .Arrange-sizeFill,
 .Arrange--withGutter > .Arrange-row > .Arrange-sizeFit,
 .Arrange--withGutter > .Arrange-row > .Arrange-sizeFill {
   padding: 0 5px;
 }
+
 /** @define Button */
+
 /**
  * The button classes are best applied to links and buttons.
  * These components can be used in forms, as calls to action, or as part of the
  * general UI of the site/app.
  */
+
 /**
  * 1. Normalize `box-sizing` across all elements that this component could be
  *    applied to.
@@ -3897,6 +4622,7 @@ ul {
  * 3. Inherit font styles from ancestor.
  * 4. Prevent button text from being selectable.
  */
+
 .Button {
   background: transparent;
   border-color: currentcolor;
@@ -3904,11 +4630,10 @@ ul {
   border-width: 1px;
   box-sizing: border-box; /* 1 */
   color: inherit; /* 2 */
-  cursor: pointer;
   display: inline-block;
   font: inherit; /* 3 */
   margin: 0;
-  padding: calc(vr0.5rem - 1px);
+  padding: calc(0.375rem - 1px) calc(1.5rem/3 - 1px);
   position: relative;
   text-align: center;
   text-decoration: none;
@@ -3917,35 +4642,44 @@ ul {
       -ms-user-select: none;
           user-select: none; /* 4 */
 }
+
 /**
  * Remove excess padding and border in Firefox 4+
  */
+
 .Button::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
+
 /**
  * Work around a Firefox/IE bug where the transparent `button` background
  * results in a loss of the default `button` focus styles.
  */
+
 .Button:focus {
   outline: 1px dotted;
   outline: 5px auto -webkit-focus-ring-color;
 }
+
 /**
  * UI states
  */
+
 .Button:hover,
 .Button:focus,
 .Button:active {
   text-decoration: none;
 }
+
 .Button:disabled,
 .Button.is-disabled {
   cursor: default;
   opacity: 0.5;
 }
+
 /** @define FlexEmbed */
+
 /**
  * Flexible media embeds
  *
@@ -3955,47 +4689,60 @@ ul {
  *
  * Based on: http://alistapart.com/article/creating-intrinsic-ratios-for-video
  */
+
 .FlexEmbed {
   display: block;
   overflow: hidden;
   position: relative;
 }
+
 /**
  * The aspect-ratio hack is applied to an empty element because it allows
  * the component to respect `max-height`. Default aspect ratio is 1:1.
  */
+
 .FlexEmbed-ratio {
   display: block;
   padding-bottom: 100%;
   width: 100%;
 }
+
 /**
  * Modifier: 3:1 aspect ratio
  */
+
 .FlexEmbed-ratio--3by1 {
   padding-bottom: 33.33333%;
 }
+
 /**
  * Modifier: 2:1 aspect ratio
  */
+
 .FlexEmbed-ratio--2by1 {
   padding-bottom: 50%;
 }
+
 /**
  * Modifier: 16:9 aspect ratio
  */
+
 .FlexEmbed-ratio--16by9 {
   padding-bottom: 56.25%;
 }
+
 /**
  * Modifier: 4:3 aspect ratio
  */
+
 .FlexEmbed-ratio--4by3 {
   padding-bottom: 75%;
 }
+
 /**
  * Fit the content to the aspect ratio
  */
+
 .FlexEmbed-content {
   bottom: 0;
   height: 100%;
@@ -4004,21 +4751,26 @@ ul {
   top: 0;
   width: 100%;
 }
+
 /** @define Grid */
+
 /**
  * Core grid component
  *
  * DO NOT apply dimension or offset utilities to the `Grid` element. All cell
  * widths and offsets should be applied to child grid cells.
  */
+
 /* Grid container
    ========================================================================== */
+
 /**
  * All content must be contained within child `Grid-cell` elements.
  *
  * 1. Account for browser defaults of elements that might be the root node of
  *    the component.
  */
+
 .Grid {
   box-sizing: border-box;
   display: -webkit-box;
@@ -4031,38 +4783,47 @@ ul {
   margin: 0; /* 1 */
   padding: 0; /* 1 */
 }
+
 /**
  * Modifier: center align all grid cells
  */
+
 .Grid--alignCenter {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
+
 /**
  * Modifier: right align all grid cells
  */
+
 .Grid--alignRight {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
 }
+
 /**
  * Modifier: middle-align grid cells
  */
+
 .Grid--alignMiddle {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
+
 /**
  * Modifier: bottom-align grid cells
  */
+
 .Grid--alignBottom {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
 }
+
 /**
  * Modifier: allow cells to equal distribute width
  *
@@ -4072,32 +4833,40 @@ ul {
  *    Use `0%` to avoid bug in IE10/11 with unitless flex basis
  *    http://git.io/vllWx
  */
+
 .Grid--fit > .Grid-cell {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 0%;
           flex: 1 1 0%; /* 1 */
 }
+
 /**
  * Modifier: all cells match height of tallest cell in a row
  */
+
 .Grid--equalHeight > .Grid-cell {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
+
 /**
  * Modifier: gutters
  */
+
 .Grid--withGutter {
   margin: 0 -12px;
   margin: 0 -0.75rem;
 }
+
 .Grid--withGutter > .Grid-cell {
   padding: 0 12px;
   padding: 0 0.75rem;
 }
+
 /* Grid cell
    ========================================================================== */
+
 /**
  * No explicit width by default. Rely on combining `Grid-cell` with a dimension
  * utility or a component class that extends 'Grid'.
@@ -4106,891 +4875,1093 @@ ul {
  * 2. Fix issue where elements with overflow extend past the
  *    `Grid-cell` container - https://git.io/vw5oF
  */
+
 .Grid-cell {
   box-sizing: inherit;
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%; /* 1 */
   min-width: 0; /* 2 */
 }
+
 /**
  * Modifier: horizontally center one unit
  * Set a specific unit to be horizontally centered. Doesn't affect
  * any other units. Can still contain a child `Grid` object.
  */
+
 .Grid-cell--center {
   margin: 0 auto;
 }
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-top: 0;
-  padding-bottom: 0;
-  font: inherit;
-  vertical-align: bottom; }
-html {
-  box-sizing: border-box;
-  font-family: sans-serif;
-  -webkit-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%; }
-body {
-  margin: 0;
-  background: #fff;
-  color: #000; }
-button,
-fieldset,
-input:not([type="radio"]):not([type="checkbox"]),
-select,
-textarea {
-  border-width: 1px;
-  border-style: solid;
-  border-color: #808080; }
-iframe {
-  border: 0; }
-code,
-kbd,
-pre,
-samp {
-  font-family: monospace;
-  font-size: 0.875em; }
-small,
-sub,
-sup {
-  font-size: 0.875em; }
-sub,
-sup {
-  line-height: 0; }
-input[type="radio"],
-input[type="checkbox"] {
-  margin-bottom: 0.325em; }
-hr {
-  position: relative;
-  border: 0; }
-hr:after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: #808080; }
-sub,
-sup {
-  position: relative; }
-sub {
-  bottom: -0.2em; }
-sup {
-  top: -0.2em; }
-table {
-  border-collapse: collapse;
-  border-spacing: 0; }
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-main,
-menu,
-nav,
-section,
-summary {
-  display: block; }
-audio,
-canvas,
-progress,
-video {
-  display: inline-block; }
-audio:not([controls]) {
-  display: none;
-  height: 0; }
-template,
-[hidden] {
-  display: none; }
-a {
-  background-color: transparent; }
-a:active,
-a:hover {
-  outline-width: 0; }
-abbr[title] {
-  border-bottom: none;
-  text-decoration: underline;
-  text-decoration: underline dotted; }
-b,
-strong {
-  font-weight: bolder; }
-dfn {
-  font-style: italic; }
-mark {
-  background-color: #ff0;
-  color: #000; }
-img {
-  border-style: none; }
-svg:not(:root) {
-  overflow: hidden; }
-button,
-input,
-select {
-  overflow: visible; }
-button,
-select {
-  text-transform: none; }
-button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
-  cursor: pointer; }
-[disabled] {
-  cursor: default; }
-button,
-html [type="button"],
-[type="reset"],
-[type="submit"] {
-  -webkit-appearance: button; }
-button::-moz-focus-inner,
-input::-moz-focus-inner {
-  border: 0;
-  padding: 0; }
-button:-moz-focusring,
-input:-moz-focusring {
-  outline: 1px dotted ButtonText; }
-legend {
-  color: inherit;
-  display: table;
-  max-width: 100%;
-  padding: 0;
-  white-space: normal; }
-textarea {
-  overflow: auto; }
-[type="checkbox"],
-[type="radio"] {
-  box-sizing: border-box;
-  padding: 0; }
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
-  height: auto; }
-[type="search"] {
-  -webkit-appearance: textfield; }
-[type="search"]::-webkit-search-cancel-button,
-[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none; }
-/* Vertical Rhythm Reset: Alignment */
+
+/**
+ * google-material-color v1.3.1
+ * https://github.com/danlevan/google-material-color
+ */
+
 :root {
-  font-size: 16px; }
-*,
-*:before,
-*:after {
-  line-height: 20px;
-  line-height: 1.25001rem; }
-button,
-input:not([type=radio]):not([type=checkbox]),
-option,
-select:not([multiple]) {
-  height: 20px;
-  height: 1.25001rem; }
-audio {
-  height: 40px;
-  height: 2.50002rem; }
-hr {
-  height: 40px;
-  height: 2.50002rem; }
-select[multiple],
-textarea {
-  height: 80px;
-  height: 5.00004rem; }
-iframe,
-video {
-  height: 160.001px;
-  height: 10.00008rem; }
-h1 {
-  margin-top: 0px;
-  margin-bottom: 20px;
-  margin-bottom: 1.25001rem; }
-blockquote,
-dl,
-form,
+  line-height: 1.5;
+  font-family: 'Open Sans', sans-serif;
+}
+
+a {
+  color: #18FFFF;
+}
+
+h1,
 h2,
 h3,
 h4,
 h5,
-h6,
-ol,
-p,
-pre,
-table,
-ul {
-  margin-top: 20px;
-  margin-top: 1.25001rem;
-  margin-bottom: 20px;
-  margin-bottom: 1.25001rem; }
-fieldset {
-  display: inline-block;
-  margin: 1.25001rem 0 calc(1.25001rem - 1px);
-  width: 100%; }
+h6 {
+  font-family: 'Open Sans', sans-serif;
+  margin: 48px 0 24px 0;
+  margin: 3rem 0 1.5rem 0;
+}
+
 h1 {
-  font-size: 39.062px;
-  font-size: 2.44141rem;
-  line-height: 40px;
-  line-height: 2.50001rem; }
+  font-size: 33.184px;
+  font-size: 2.074rem;
+  line-height: 48px;
+  line-height: 3rem;  
+}
+
 h2 {
-  font-size: 31.249px;
-  font-size: 1.95312rem;
-  line-height: 40px;
-  line-height: 2.50001rem; }
+  font-size: 27.648px;
+  font-size: 1.728rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+}
+
 h3 {
-  font-size: 25px;
-  font-size: 1.5625rem;
-  line-height: 40px;
-  line-height: 2.50001rem; }
+  font-size: 23.04px;
+  font-size: 1.44rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+}
+
 h4 {
-  font-size: 20px;
-  font-size: 1.25rem;
-  line-height: 20px;
-  line-height: 1.25001rem; }
+  font-size: 19.2px;
+  font-size: 1.2rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+}
+
 h5 {
   font-size: 16px;
   font-size: 1rem;
-  line-height: 20px;
-  line-height: 1.25001rem; }
+  line-height: 24px;
+  line-height: 1.5rem;
+}
+
 h6 {
-  font-size: 12.8px;
-  font-size: 0.8rem;
-  line-height: 20px;
-  line-height: 1.25001rem; }
-.vr-font-size-0 {
+  font-size: 13.328px;
+  font-size: 0.833rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+}
+
+p,
+blockquote,
+ul, ol {
+  margin: 24px 0;
+  margin: 1.5rem 0;
+}
+
+figure img {
+  width: 100%;
+  max-width: 100%;
+  margin: auto;
+  display: block;
+}
+
+small {
+  font-size: 13.328px;
+  font-size: 0.833rem;
+}
+
+img {
+  max-width: 100%;
+}
+
+blockquote {
+  border-left: 2px solid #18FFFF;
+  padding-left: 24px;
+  padding-left: 1.5rem;
+  margin-left: 0;
+}
+
+fieldset {
+  margin: 24px 0;
+  margin: 1.5rem 0;
+  padding: calc(0.75rem - 1px) 1.5rem;
+}
+
+legend {
+  padding: 0 8px;
+  padding: 0 0.5rem;
+  
+}
+
+label {
+  margin: 30px 0 6px;
+  margin: 1.875rem 0 0.375rem;
+  display: block;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+}
+
+input[type="radio"] + label, input[type="checkbox"] + label{
+  cursor: pointer;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 8px;
+  margin-left: 0.5rem;
+  margin-right: 24px;
+  margin-right: 1.5rem;
+  display: inline-block;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='search'],
+input[type='tel'],
+input[type='url'],
+input[type='number'],
+input[type='date'],
+input[type='month'],
+input[type='week'],
+input[type='datetime'],
+input[type='datetime-local'],
+input[type='password'],
+fieldset,
+select,
+textarea {
+  width: 100%;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, .12);
+}
+
+input[type='text'],
+input[type='email'],
+input[type='search'],
+input[type='tel'],
+input[type='url'],
+input[type='number'],
+input[type='date'],
+input[type='month'],
+input[type='week'],
+input[type='datetime'],
+input[type='datetime-local'],
+input[type='password'] {
   font-size: 16px;
   font-size: 1rem;
-  line-height: 20px;
-  line-height: 1.25001rem; }
-.vr-font-size-1 {
-  font-size: 20px;
-  font-size: 1.25rem;
-  line-height: 20px;
-  line-height: 1.25001rem; }
-.vr-font-size-2 {
-  font-size: 25px;
-  font-size: 1.5625rem;
-  line-height: 40px;
-  line-height: 2.50001rem; }
-.vr-font-size-3 {
-  font-size: 31.249px;
-  font-size: 1.95312rem;
-  line-height: 40px;
-  line-height: 2.50001rem; }
-.vr-font-size-4 {
-  font-size: 39.062px;
-  font-size: 2.44141rem;
-  line-height: 40px;
-  line-height: 2.50001rem; }
-.vr-font-size-5 {
-  font-size: 48.828px;
-  font-size: 3.05176rem;
-  line-height: 60px;
-  line-height: 3.75001rem; }
-.vr-line-height-1 {
-  line-height: 20px;
-  line-height: 1.25001rem; }
-.vr-line-height-2 {
-  line-height: 40px;
-  line-height: 2.50002rem; }
-.vr-line-height-3 {
-  line-height: 60px;
-  line-height: 3.75003rem; }
-.vr-line-height-4 {
-  line-height: 80px;
-  line-height: 5.00004rem; }
-.vr-line-height-5 {
-  line-height: 100px;
-  line-height: 6.25005rem; }
-.vr-line-height-6 {
-  line-height: 120px;
-  line-height: 7.50006rem; }
-.vr-line-height-7 {
-  line-height: 140.001px;
-  line-height: 8.75007rem; }
-.vr-line-height-8 {
-  line-height: 160.001px;
-  line-height: 10.00008rem; }
-.vr-line-height-9 {
-  line-height: 180.001px;
-  line-height: 11.25009rem; }
-.vr-line-height-10 {
-  line-height: 200.001px;
-  line-height: 12.5001rem; }
-[height="1"],
-select[multiple][size="1"],
-textarea[rows="1"],
-.vr-height-1 {
-  height: 20px;
-  height: 1.25001rem; }
-[height="2"],
-select[multiple][size="2"],
-textarea[rows="2"],
-.vr-height-2 {
-  height: 40px;
-  height: 2.50002rem; }
-[height="3"],
-select[multiple][size="3"],
-textarea[rows="3"],
-.vr-height-3 {
-  height: 60px;
-  height: 3.75003rem; }
-[height="4"],
-select[multiple][size="4"],
-textarea[rows="4"],
-.vr-height-4 {
-  height: 80px;
-  height: 5.00004rem; }
-[height="5"],
-select[multiple][size="5"],
-textarea[rows="5"],
-.vr-height-5 {
-  height: 100px;
-  height: 6.25005rem; }
-[height="6"],
-select[multiple][size="6"],
-textarea[rows="6"],
-.vr-height-6 {
-  height: 120px;
-  height: 7.50006rem; }
-[height="7"],
-select[multiple][size="7"],
-textarea[rows="7"],
-.vr-height-7 {
-  height: 140.001px;
-  height: 8.75007rem; }
-[height="8"],
-select[multiple][size="8"],
-textarea[rows="8"],
-.vr-height-8 {
-  height: 160.001px;
-  height: 10.00008rem; }
-[height="9"],
-select[multiple][size="9"],
-textarea[rows="9"],
-.vr-height-9 {
-  height: 180.001px;
-  height: 11.25009rem; }
-[height="10"],
-select[multiple][size="10"],
-textarea[rows="10"],
-.vr-height-10 {
-  height: 200.001px;
-  height: 12.5001rem; }
-.vr-width-1 {
-  width: 20px;
-  width: 1.25001rem; }
-.vr-width-2 {
-  width: 40px;
-  width: 2.50002rem; }
-.vr-width-3 {
-  width: 60px;
-  width: 3.75003rem; }
-.vr-width-4 {
-  width: 80px;
-  width: 5.00004rem; }
-.vr-width-5 {
-  width: 100px;
-  width: 6.25005rem; }
-.vr-width-6 {
-  width: 120px;
-  width: 7.50006rem; }
-.vr-width-7 {
-  width: 140.001px;
-  width: 8.75007rem; }
-.vr-width-8 {
-  width: 160.001px;
-  width: 10.00008rem; }
-.vr-width-9 {
-  width: 180.001px;
-  width: 11.25009rem; }
-.vr-width-10 {
-  width: 200.001px;
-  width: 12.5001rem; }
-.vr-margin-1 {
-  margin: 20px;
-  margin: 1.25001rem; }
-.vr-margin-2 {
-  margin: 40px;
-  margin: 2.50002rem; }
-.vr-margin-3 {
-  margin: 60px;
-  margin: 3.75003rem; }
-.vr-margin-4 {
-  margin: 80px;
-  margin: 5.00004rem; }
-.vr-margin-5 {
-  margin: 100px;
-  margin: 6.25005rem; }
-.vr-margin-top-1 {
-  margin-top: 20px;
-  margin-top: 1.25001rem; }
-.vr-margin-top-2 {
-  margin-top: 40px;
-  margin-top: 2.50002rem; }
-.vr-margin-top-3 {
-  margin-top: 60px;
-  margin-top: 3.75003rem; }
-.vr-margin-top-4 {
-  margin-top: 80px;
-  margin-top: 5.00004rem; }
-.vr-margin-top-5 {
-  margin-top: 100px;
-  margin-top: 6.25005rem; }
-.vr-margin-bottom-1 {
-  margin-bottom: 20px;
-  margin-bottom: 1.25001rem; }
-.vr-margin-bottom-2 {
-  margin-bottom: 40px;
-  margin-bottom: 2.50002rem; }
-.vr-margin-bottom-3 {
-  margin-bottom: 60px;
-  margin-bottom: 3.75003rem; }
-.vr-margin-bottom-4 {
-  margin-bottom: 80px;
-  margin-bottom: 5.00004rem; }
-.vr-margin-bottom-5 {
-  margin-bottom: 100px;
-  margin-bottom: 6.25005rem; }
-.vr-padding-1 {
-  padding: 20px;
-  padding: 1.25001rem; }
-.vr-padding-2 {
-  padding: 40px;
-  padding: 2.50002rem; }
-.vr-padding-3 {
-  padding: 60px;
-  padding: 3.75003rem; }
-.vr-padding-4 {
-  padding: 80px;
-  padding: 5.00004rem; }
-.vr-padding-5 {
-  padding: 100px;
-  padding: 6.25005rem; }
-.vr-padding-top-1 {
-  padding-top: 20px;
-  padding-top: 1.25001rem; }
-.vr-padding-top-2 {
-  padding-top: 40px;
-  padding-top: 2.50002rem; }
-.vr-padding-top-3 {
-  padding-top: 60px;
-  padding-top: 3.75003rem; }
-.vr-padding-top-4 {
-  padding-top: 80px;
-  padding-top: 5.00004rem; }
-.vr-padding-top-5 {
-  padding-top: 100px;
-  padding-top: 6.25005rem; }
-.vr-padding-bottom-1 {
-  padding-bottom: 20px;
-  padding-bottom: 1.25001rem; }
-.vr-padding-bottom-2 {
-  padding-bottom: 40px;
-  padding-bottom: 2.50002rem; }
-.vr-padding-bottom-3 {
-  padding-bottom: 60px;
-  padding-bottom: 3.75003rem; }
-.vr-padding-bottom-4 {
-  padding-bottom: 80px;
-  padding-bottom: 5.00004rem; }
-.vr-padding-bottom-5 {
-  padding-bottom: 100px;
-  padding-bottom: 6.25005rem; }
-.vr-offset-1 {
-  -webkit-transform: translateY(-1px);
-  transform: translateY(-1px);
-  margin-bottom: -2px; }
-.vr-offset-2 {
-  -webkit-transform: translateY(-2px);
-  transform: translateY(-2px);
-  margin-bottom: -4px; }
-.vr-offset-3 {
-  -webkit-transform: translateY(-3px);
-  transform: translateY(-3px);
-  margin-bottom: -6px; }
-.vr-offset-4 {
-  -webkit-transform: translateY(-4px);
-  transform: translateY(-4px);
-  margin-bottom: -8px; }
-.vr-offset-5 {
-  -webkit-transform: translateY(-5px);
-  transform: translateY(-5px);
-  margin-bottom: -10px; }
-.vr-offset-top-1 {
-  -webkit-transform: translateY(-1px);
-  transform: translateY(-1px);
-  margin-bottom: -1px; }
-.vr-offset-top-2 {
-  -webkit-transform: translateY(-2px);
-  transform: translateY(-2px);
-  margin-bottom: -2px; }
-.vr-offset-top-3 {
-  -webkit-transform: translateY(-3px);
-  transform: translateY(-3px);
-  margin-bottom: -3px; }
-.vr-offset-top-4 {
-  -webkit-transform: translateY(-4px);
-  transform: translateY(-4px);
-  margin-bottom: -4px; }
-.vr-offset-top-5 {
-  -webkit-transform: translateY(-5px);
-  transform: translateY(-5px);
-  margin-bottom: -5px; }
-.vr-offset-bottom-1 {
-  margin-bottom: -1px; }
-.vr-offset-bottom-2 {
-  margin-bottom: -2px; }
-.vr-offset-bottom-3 {
-  margin-bottom: -3px; }
-.vr-offset-bottom-4 {
-  margin-bottom: -4px; }
-.vr-offset-bottom-5 {
-  margin-bottom: -5px; }
-@media (min-width: 60em) {
-  /* Vertical Rhythm Reset: Breakpoint Alignment */
-  *,
-  *:before,
-  *:after {
-    line-height: 1.50001rem; }
-  button,
-  input:not([type=radio]):not([type=checkbox]),
-  option,
-  select:not([multiple]) {
-    height: 1.50001rem; }
-  audio {
-    height: 3.00002rem; }
-  hr {
-    height: 3.00002rem; }
-  select[multiple],
-  textarea {
-    height: 6.00004rem; }
-  iframe,
-  video {
-    height: 12.00008rem; }
-  h1 {
-    margin-top: 0px;
-    margin-bottom: 1.50001rem; }
-  blockquote,
-  dl,
-  form,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  ol,
-  p,
-  pre,
-  table,
-  ul {
-    margin-top: 1.50001rem;
-    margin-bottom: 1.50001rem; }
-  fieldset {
-    display: inline-block;
-    margin: 1.50001rem 0 calc(1.50001rem - 1px);
-    width: 100%; }
-  h1 {
-    font-size: 3.8416rem;
-    line-height: 4.50001rem; }
-  h2 {
-    font-size: 2.744rem;
-    line-height: 3.00001rem; }
-  h3 {
-    font-size: 1.96rem;
-    line-height: 3.00001rem; }
-  h4 {
-    font-size: 1.4rem;
-    line-height: 1.50001rem; }
-  h5 {
-    font-size: 1rem;
-    line-height: 1.50001rem; }
-  h6 {
-    font-size: 0.71429rem;
-    line-height: 1.50001rem; }
-  .vr-font-size-0 {
-    font-size: 1rem;
-    line-height: 1.50001rem; }
-  .vr-font-size-1 {
-    font-size: 1.4rem;
-    line-height: 1.50001rem; }
-  .vr-font-size-2 {
-    font-size: 1.96rem;
-    line-height: 3.00001rem; }
-  .vr-font-size-3 {
-    font-size: 2.744rem;
-    line-height: 3.00001rem; }
-  .vr-font-size-4 {
-    font-size: 3.8416rem;
-    line-height: 4.50001rem; }
-  .vr-font-size-5 {
-    font-size: 5.37824rem;
-    line-height: 6.00001rem; }
-  .vr-line-height-1 {
-    line-height: 1.50001rem; }
-  .vr-line-height-2 {
-    line-height: 3.00002rem; }
-  .vr-line-height-3 {
-    line-height: 4.50003rem; }
-  .vr-line-height-4 {
-    line-height: 6.00004rem; }
-  .vr-line-height-5 {
-    line-height: 7.50005rem; }
-  .vr-line-height-6 {
-    line-height: 9.00006rem; }
-  .vr-line-height-7 {
-    line-height: 10.50007rem; }
-  .vr-line-height-8 {
-    line-height: 12.00008rem; }
-  .vr-line-height-9 {
-    line-height: 13.50009rem; }
-  .vr-line-height-10 {
-    line-height: 15.0001rem; }
-  [height="1"],
-  select[multiple][size="1"],
-  textarea[rows="1"],
-  .vr-height-1 {
-    height: 1.50001rem; }
-  [height="2"],
-  select[multiple][size="2"],
-  textarea[rows="2"],
-  .vr-height-2 {
-    height: 3.00002rem; }
-  [height="3"],
-  select[multiple][size="3"],
-  textarea[rows="3"],
-  .vr-height-3 {
-    height: 4.50003rem; }
-  [height="4"],
-  select[multiple][size="4"],
-  textarea[rows="4"],
-  .vr-height-4 {
-    height: 6.00004rem; }
-  [height="5"],
-  select[multiple][size="5"],
-  textarea[rows="5"],
-  .vr-height-5 {
-    height: 7.50005rem; }
-  [height="6"],
-  select[multiple][size="6"],
-  textarea[rows="6"],
-  .vr-height-6 {
-    height: 9.00006rem; }
-  [height="7"],
-  select[multiple][size="7"],
-  textarea[rows="7"],
-  .vr-height-7 {
-    height: 10.50007rem; }
-  [height="8"],
-  select[multiple][size="8"],
-  textarea[rows="8"],
-  .vr-height-8 {
-    height: 12.00008rem; }
-  [height="9"],
-  select[multiple][size="9"],
-  textarea[rows="9"],
-  .vr-height-9 {
-    height: 13.50009rem; }
-  [height="10"],
-  select[multiple][size="10"],
-  textarea[rows="10"],
-  .vr-height-10 {
-    height: 15.0001rem; }
-  .vr-width-1 {
-    width: 1.50001rem; }
-  .vr-width-2 {
-    width: 3.00002rem; }
-  .vr-width-3 {
-    width: 4.50003rem; }
-  .vr-width-4 {
-    width: 6.00004rem; }
-  .vr-width-5 {
-    width: 7.50005rem; }
-  .vr-width-6 {
-    width: 9.00006rem; }
-  .vr-width-7 {
-    width: 10.50007rem; }
-  .vr-width-8 {
-    width: 12.00008rem; }
-  .vr-width-9 {
-    width: 13.50009rem; }
-  .vr-width-10 {
-    width: 15.0001rem; }
-  .vr-margin-1 {
-    margin: 1.50001rem; }
-  .vr-margin-2 {
-    margin: 3.00002rem; }
-  .vr-margin-3 {
-    margin: 4.50003rem; }
-  .vr-margin-4 {
-    margin: 6.00004rem; }
-  .vr-margin-5 {
-    margin: 7.50005rem; }
-  .vr-margin-top-1 {
-    margin-top: 1.50001rem; }
-  .vr-margin-top-2 {
-    margin-top: 3.00002rem; }
-  .vr-margin-top-3 {
-    margin-top: 4.50003rem; }
-  .vr-margin-top-4 {
-    margin-top: 6.00004rem; }
-  .vr-margin-top-5 {
-    margin-top: 7.50005rem; }
-  .vr-margin-bottom-1 {
-    margin-bottom: 1.50001rem; }
-  .vr-margin-bottom-2 {
-    margin-bottom: 3.00002rem; }
-  .vr-margin-bottom-3 {
-    margin-bottom: 4.50003rem; }
-  .vr-margin-bottom-4 {
-    margin-bottom: 6.00004rem; }
-  .vr-margin-bottom-5 {
-    margin-bottom: 7.50005rem; }
-  .vr-padding-1 {
-    padding: 1.50001rem; }
-  .vr-padding-2 {
-    padding: 3.00002rem; }
-  .vr-padding-3 {
-    padding: 4.50003rem; }
-  .vr-padding-4 {
-    padding: 6.00004rem; }
-  .vr-padding-5 {
-    padding: 7.50005rem; }
-  .vr-padding-top-1 {
-    padding-top: 1.50001rem; }
-  .vr-padding-top-2 {
-    padding-top: 3.00002rem; }
-  .vr-padding-top-3 {
-    padding-top: 4.50003rem; }
-  .vr-padding-top-4 {
-    padding-top: 6.00004rem; }
-  .vr-padding-top-5 {
-    padding-top: 7.50005rem; }
-  .vr-padding-bottom-1 {
-    padding-bottom: 1.50001rem; }
-  .vr-padding-bottom-2 {
-    padding-bottom: 3.00002rem; }
-  .vr-padding-bottom-3 {
-    padding-bottom: 4.50003rem; }
-  .vr-padding-bottom-4 {
-    padding-bottom: 6.00004rem; }
-  .vr-padding-bottom-5 {
-    padding-bottom: 7.50005rem; }
-  .vr-offset-1 {
-    -webkit-transform: translateY(-1px);
-    transform: translateY(-1px);
-    margin-bottom: -2px; }
-  .vr-offset-2 {
-    -webkit-transform: translateY(-2px);
-    transform: translateY(-2px);
-    margin-bottom: -4px; }
-  .vr-offset-3 {
-    -webkit-transform: translateY(-3px);
-    transform: translateY(-3px);
-    margin-bottom: -6px; }
-  .vr-offset-4 {
-    -webkit-transform: translateY(-4px);
-    transform: translateY(-4px);
-    margin-bottom: -8px; }
-  .vr-offset-5 {
-    -webkit-transform: translateY(-5px);
-    transform: translateY(-5px);
-    margin-bottom: -10px; }
-  .vr-offset-top-1 {
-    -webkit-transform: translateY(-1px);
-    transform: translateY(-1px);
-    margin-bottom: -1px; }
-  .vr-offset-top-2 {
-    -webkit-transform: translateY(-2px);
-    transform: translateY(-2px);
-    margin-bottom: -2px; }
-  .vr-offset-top-3 {
-    -webkit-transform: translateY(-3px);
-    transform: translateY(-3px);
-    margin-bottom: -3px; }
-  .vr-offset-top-4 {
-    -webkit-transform: translateY(-4px);
-    transform: translateY(-4px);
-    margin-bottom: -4px; }
-  .vr-offset-top-5 {
-    -webkit-transform: translateY(-5px);
-    transform: translateY(-5px);
-    margin-bottom: -5px; }
-  .vr-offset-bottom-1 {
-    margin-bottom: -1px; }
-  .vr-offset-bottom-2 {
-    margin-bottom: -2px; }
-  .vr-offset-bottom-3 {
-    margin-bottom: -3px; }
-  .vr-offset-bottom-4 {
-    margin-bottom: -4px; }
-  .vr-offset-bottom-5 {
-    margin-bottom: -5px; } }
-@media (min-width: 80em) {
-  /* Vertical Rhythm Reset: Breakpoint Alignment */
-  :root {
-    font-size: 18px; }
-  h1 {
-    font-size: 6.85353rem;
-    line-height: 7.50001rem; }
-  h2 {
-    font-size: 4.2358rem;
-    line-height: 4.50001rem; }
-  h3 {
-    font-size: 2.61792rem;
-    line-height: 3.00001rem; }
-  h4 {
-    font-size: 1.618rem;
-    line-height: 3.00001rem; }
-  h5 {
-    font-size: 1rem;
-    line-height: 1.50001rem; }
-  h6 {
-    font-size: 0.61805rem;
-    line-height: 1.50001rem; }
-  .vr-font-size-0 {
-    font-size: 1rem;
-    line-height: 1.50001rem; }
-  .vr-font-size-1 {
-    font-size: 1.618rem;
-    line-height: 3.00001rem; }
-  .vr-font-size-2 {
-    font-size: 2.61792rem;
-    line-height: 3.00001rem; }
-  .vr-font-size-3 {
-    font-size: 4.2358rem;
-    line-height: 4.50001rem; }
-  .vr-font-size-4 {
-    font-size: 6.85353rem;
-    line-height: 7.50001rem; }
-  .vr-font-size-5 {
-    font-size: 11.08901rem;
-    line-height: 12.00001rem; } }
-@media only screen and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
-  /* Vertical Rhythm Reset: Fix for mobile select[multiple] elements */
-  select[multiple],
-  select[multiple][size] {
-    height: 1.25001rem; } }
-/*
+  line-height: 24px;
+  line-height: 1.5rem;
+  padding: calc(0.375rem - 1px) calc(1.5rem/3 - 1px)
+}
 
-@import './ui-Base/index.css';
-*/
-/*
-@import 'ui-Button';
-@import 'ui-Form';
-@import 'ui-Layout';
-@import 'ui-Navigation';
-@import 'ui-List';
-@import 'ui-Breadcrumb';
-@import 'ui-Card';
-@import 'ui-Chip';
-@import 'ui-Section';
-@import 'ui-Pager';
-@import 'ui-Menu';
-@import 'ui-Tabs';
-@import 'ui-Dialog';
-*/
+input[type='text']::-webkit-input-placeholder,
+input[type='email']::-webkit-input-placeholder,
+input[type='search']::-webkit-input-placeholder,
+input[type='tel']::-webkit-input-placeholder,
+input[type='url']::-webkit-input-placeholder,
+input[type='number']::-webkit-input-placeholder,
+input[type='date']::-webkit-input-placeholder,
+input[type='month']::-webkit-input-placeholder,
+input[type='week']::-webkit-input-placeholder,
+input[type='datetime']::-webkit-input-placeholder,
+input[type='datetime-local']::-webkit-input-placeholder,
+input[type='password']::-webkit-input-placeholder{
+  color: rgba(0, 0, 0, .38);
+}
+
+input[type='text']:-ms-input-placeholder,
+input[type='email']:-ms-input-placeholder,
+input[type='search']:-ms-input-placeholder,
+input[type='tel']:-ms-input-placeholder,
+input[type='url']:-ms-input-placeholder,
+input[type='number']:-ms-input-placeholder,
+input[type='date']:-ms-input-placeholder,
+input[type='month']:-ms-input-placeholder,
+input[type='week']:-ms-input-placeholder,
+input[type='datetime']:-ms-input-placeholder,
+input[type='datetime-local']:-ms-input-placeholder,
+input[type='password']:-ms-input-placeholder{
+  color: rgba(0, 0, 0, .38);
+}
+
+input[type='text']::placeholder,
+input[type='email']::placeholder,
+input[type='search']::placeholder,
+input[type='tel']::placeholder,
+input[type='url']::placeholder,
+input[type='number']::placeholder,
+input[type='date']::placeholder,
+input[type='month']::placeholder,
+input[type='week']::placeholder,
+input[type='datetime']::placeholder,
+input[type='datetime-local']::placeholder,
+input[type='password']::placeholder{
+  color: rgba(0, 0, 0, .38);
+}
+
+select[multiple] {
+  padding: calc(0.75rem - 1px) calc(1.5rem/2 - 1px);
+}
+
+option {
+  height: 24px;
+  height: 1.5rem;
+  padding: 0;
+}
+
+select:not([multiple]) {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+  height: auto;
+  padding: calc(0.375rem - 1px) calc(1.5rem/3 - 1px);
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border-radius: 0;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"> <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/> <path d="M0-.75h24v24H0z" fill="none"/> </svg>');
+  background-color: white;
+  background-repeat: no-repeat;
+  background-position: 99% 50%;
+}
+
+table {
+  width: 100%;
+  background-color: white;
+}
+
+table caption {
+}
+
+table th {
+  text-align: left;
+}
+
+table th, table td {
+  border-color: rgba(0, 0, 0, .12);
+}
+
+table thead th {
+  color: rgba(0, 0, 0, .87);
+}
+
+table tbody td,
+  table tfoot td {
+  border-top-width: 1px;
+  border-top-style: solid;
+  color: rgba(0, 0, 0, .54);
+}
+
+.u-ratio16of9 {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+}
+
+.u-ratio1of1 {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  padding-bottom: 100%;
+}
+
+.u-shadow {
+  box-shadow: 0px 1px 2px black;
+}
+
+.u-listUnstyled {
+  list-style: none;
+  padding-left: 0;
+}
+
+.u-listInline {
+  list-style: none;
+  padding-left: 0
+}
+
+.u-listInline > li{
+  margin: 6px 8px 6px 0;
+  margin: 0.375rem 0.5rem 0.375rem 0;
+  display: inline-block;
+}
+
+.Button {
+  background-color: inherit;
+  color: inherit;
+  vertical-align: middle;
+}
+
+.Button .material-icons {
+  line-height: 1;
+  font-size: inherit;
+  vertical-align: middle;
+}
+
+.Button--sm{
+  font-size: 13.328px;
+  font-size: 0.833rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+  padding: calc(0.188rem - 1px) calc(1.5rem/4 - 1px);
+}
+
+.Button--lg{
+  font-size: 19.2px;
+  font-size: 1.2rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+  padding: calc(0.75rem - 1px) calc(1.5rem - 1px);
+}
+
+.Button--circle{
+  width: 48px;
+  width: 3rem;
+  height: 48px;
+  height: 3rem;
+  border-radius: 50%;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Button--circle.Button--sm{
+  width: 36px;
+  width: 2.25rem;
+  height: 36px;
+  height: 2.25rem;
+}
+
+.Button--primary{
+  background-color: #3F51B5;
+  color: #ffffff;
+  border-color: #3F51B5;
+}
+
+.Button--accent{
+  background-color: #18FFFF;
+  color: rgba(0, 0, 0, .87);
+  border-color: #18FFFF;
+}
+
+.Button--accent:hover{
+  background-color: #18FFFF;
+  color: rgba(0, 0, 0, .87);
+}
+
+.Button + .Button{
+  margin-left: 12px;
+  margin-left: 0.75rem;
+}
+
+.Breadcrumb {
+}
+
+.Breadcrumb ol{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.Breadcrumb ol li{
+  display: inline-block;
+  color: inherit;
+}
+
+.Breadcrumb ol li a{
+  text-decoration: none;
+  color: inherit;
+}
+
+.Breadcrumb ol li a:after{
+  font-family: 'Material Icons';
+  content: 'chevron_right';
+  vertical-align: middle;
+  line-height: 1;
+}
+
+.Card {
+  background-color: #ffffff;
+  background-position: center center;
+  background-size: cover;
+  color: rgba(0, 0, 0, .87);
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%
+}
+
+.Card-media{
+  margin: 0;
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+}
+
+.Card-media img{
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.Card-header{
+  padding: 12px 24px;
+  padding: 0.75rem 1.5rem;
+}
+
+.Card-header-title{
+  font-size: 19.2px;
+  font-size: 1.2rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+  font-weight: bolder;
+  margin: 0;
+}
+
+.Card-header-title a{
+  color: inherit;
+  text-decoration: none;
+}
+
+.Card-header-subtitle{
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+  font-weight: bolder;
+  margin: 0;
+  opacity: .85;
+}
+
+.Card-actions{
+  padding: 12px 12px;
+  padding: 0.75rem 0.75rem;
+}
+
+.Card-content{
+  padding: 12px 24px;
+  padding: 0.75rem 1.5rem;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.Card--overlay{
+  position: relative;
+  background-size: cover;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.Card--overlay .Card-header,
+    .Card--overlay .Card-content,
+    .Card--overlay .Card-actions{
+  z-index: 2;
+  position: relative;
+}
+
+.Card--overlay .Card-header{
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+.Card--overlay .Card-actions{
+  margin-top: auto;
+}
+
+.Card--overlay .Card-stacked{
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+
+.Card--overlay:before{
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, .5);
+  z-index: 1;
+}
+
+.Card--horizontal{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.Card--horizontal .Card-media{
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: auto;
+}
+
+.Card--horizontal .Card-media img{
+  max-width: none;
+  max-width: initial;
+  height: 100%;
+  position: absolute;
+}
+
+.Card--horizontal .Card-stacked{
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.Card--horizontal .Card-actions{
+  margin-top: auto;
+}
+
+.Card--primary{
+  background-color: #3F51B5;
+  color: #ffffff;
+}
+
+.Card--primaryLight{
+  background-color: #5C6BC0;
+  color: #ffffff;
+}
+
+.Card--accent{
+  background-color: #18FFFF;
+  color: rgba(0, 0, 0, .87);
+}
+
+.Chip {
+  font-size: 13.328px;
+  font-size: 0.833rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+
+  padding: 0 6px;
+  padding: 0 0.375rem;
+  display: inline-block;
+  background-color: #EEEEEE;
+  color: rgba(0, 0, 0, .54);
+  text-decoration: none;
+  white-space: nowrap
+}
+
+.Chip:hover{
+  text-decoration: none;
+}
+
+.Dialog {
+  background: white;
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: auto;
+  padding: 0;
+  border: 0;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, .5)
+
+}
+
+.Dialog[open]{
+  display: block;
+}
+
+.Dialog + .backdrop{
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, .5);
+}
+
+.Dialog-title{
+
+  @include vr($font-size: 1, $padding: 0.5 var(--Grid-gutter-size));
+  margin: 0;
+}
+
+.Dialog-content{
+
+  @include vr($font-size: 0, $padding: 0.5 var(--Grid-gutter-size));
+  color: rgba(0, 0, 0, .54);
+}
+
+.Dialog-actions{
+
+  @include vr($padding: 0.5 calc(var(--Grid-gutter-size)/2));
+}
+
+.Form {
+  margin: 0
+}
+
+.Form-item{
+  margin: 24px 0;
+  margin: 1.5rem 0;
+}
+
+.Form-item-hint{
+  font-size: 13.328px;
+  font-size: 0.833rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+  color: rgba(0, 0, 0, .38);
+}
+
+.Form-item.is-error{
+  border-left-width: 3px;
+  border-left-style: solid;
+  border-color: #FF5252;
+  padding-left: calc(1.5rem - 3px);
+}
+
+.Form-item.is-error .Form-item-hint{
+  color: #FF5252;
+}
+
+.Form-actions{
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+}
+
+.Layout {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  min-height: 100vh;
+  position: relative
+}
+
+.Layout-drawer{
+  position: fixed;
+  z-index: 400;
+  top: 0;
+  left: 0;
+  min-width: 25%;
+  height: 100%;
+  background-color: white;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  transition: -webkit-transform 0.5s ease-out;
+  transition: transform 0.5s ease-out;
+  transition: transform 0.5s ease-out, -webkit-transform 0.5s ease-out;
+}
+
+.Layout-drawer.is-active{
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  overflow-y: scroll;
+}
+
+.Layout-drawer.is-active + .Layout-obfuscator{
+  background-color: rgba(0, 0, 0, .25);
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.Layout-obfuscator{
+  position: absolute;
+  z-index: 300;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.Layout-header{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #3949AB;
+  color: #ffffff;
+}
+
+.Layout-header-row{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 24px;
+  padding: 0 1.5rem;
+}
+
+.Layout-header-logo{
+  margin: 12px 24px;
+  margin: 0.75rem 1.5rem;
+  height: 48px;
+  height: 3rem;
+}
+
+.Layout-header-title{
+  margin: 12px 0;
+  margin: 0.75rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.Layout-header-title-text{
+  font-size: 16px;
+  font-size: 1rem;
+  font-weight: lighter;
+  color: inherit;
+  text-decoration: none;
+}
+
+.Layout-header-title-slogan{
+  font-size: 13.328px;
+  font-size: 0.833rem;
+  font-weight: lighter;
+  opacity: 0.85;
+}
+
+.Layout-header-drawerButton{
+  cursor: pointer;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.Layout-header--fixed{
+  position: fixed;
+  z-index: 500;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.Layout-content{
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+}
+
+.Layout-footer{
+  padding: 24px 24px;
+  padding: 1.5rem 1.5rem;
+  background-color: #424242;
+  color: rgba(255, 255, 255, .7);
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+/*@import 'list';*/
+
+.Menu {
+  margin: 0;
+  padding: 0;
+  list-style: none
+}
+
+.Menu-item{
+  position: relative;
+}
+
+.Menu-item .Menu{
+  padding-left: 24px;
+  padding-left: 1.5rem;
+}
+
+.Menu-item .Menu .Menu-item .Menu-item-link{
+
+  /*font-size: ms(-1);*/
+  padding-top: 6px;
+  padding-top: 0.375rem;
+  padding-bottom: 6px;
+  padding-bottom: 0.375rem;
+}
+
+.Menu-item-link{
+  padding: 12px 12px;
+  padding: 0.75rem 0.75rem;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.Menu--inline {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none
+}
+
+.Menu--inline > .Menu-item{
+}
+
+.Menu--inline > .Menu-item > a{
+  padding-bottom: calc(0.75rem - 2px);
+  border-bottom: 2px solid;
+  border-color: transparent;
+  white-space: nowrap;
+}
+
+.Menu--inline > .Menu-item > a.is-active,
+      .Menu--inline > .Menu-item > a:focus,
+      .Menu--inline > .Menu-item > a:hover{
+  background-color: transparent;
+  border-color: #18FFFF;
+}
+
+.Menu--dropdown {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: auto;
+  background-color: white;
+  color: rgba(0, 0, 0, .87);
+  box-shadow: 1px 1px 1px black;
+  min-width: 220px;
+  z-index: 100;
+}
+
+.Menu--dropdown .Menu-item .Menu {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  min-width: 220px;
+  box-shadow: 1px 1px 1px black;
+  background-color: white;
+  padding-left: 0;
+}
+
+.Menu--dropdown .Menu-item-link{
+}
+
+.Menu--dropdown .Menu-item-link:hover{
+}
+
+.Menu--dropdown .Menu-item:hover > .Menu{
+  display: block;
+}
+
+.Menu--dropdown.is-active{
+  display: block;
+}
+
+.Navigation {
+  padding: 0
+}
+
+.Navigation-title{
+  font-size: 16px;
+  font-size: 1rem;
+  padding: 24px 24px;
+  padding: 1.5rem 1.5rem;
+  margin: 0;
+}
+
+.Navigation-title a{
+  color: inherit;
+}
+
+/*@import 'pager';*/
+
+.Section {
+  padding: 48px 24px;
+  padding: 3rem 1.5rem;
+  position: relative
+
+
+}
+
+.Section-title{
+  font-size: 33.184px;
+  font-size: 2.074rem;
+  line-height: 48px;
+  line-height: 3rem;
+  font-weight: bolder;
+  margin-bottom: 12px;
+  margin-bottom: 0.75rem;
+}
+
+.Section-subtitle{
+  font-size: 23.04px;
+  font-size: 1.44rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+  font-weight: bold;
+  margin-top: 0;
+  opacity: 0.85;
+}
+
+.Section-lead{
+  font-size: 19.2px;
+  font-size: 1.2rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+  font-weight: normal;
+}
+
+.Section--hero{
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  min-height: 50vh;
+  overflow: hidden;
+}
+
+.Section--hero .Section-text{
+  background-color: rgba(255, 255, 255, .85);
+  padding: 12px 24px;
+  padding: 0.75rem 1.5rem;
+}
+
+.Section--hero .Section-inner{
+  position: relative;
+  z-index: 200;
+}
+
+.Section--fullHeight{
+  min-height: 100vh;
+}
+
+.Section--primary{
+  background-color: #3F51B5;
+  color: #ffffff;
+}
+
+.Section--primaryLight{
+  background-color: #5C6BC0;
+  color: #ffffff;
+}
+
+.Section--primaryDark{
+  background-color: #3949AB;
+  color: #ffffff;
+}
+
+.Section--accent{
+  background-color: #18FFFF;
+  color: rgba(0, 0, 0, .87);
+}
+
+.Section--accentLight{
+  background-color: #84FFFF;
+  color: rgba(0, 0, 0, .87);
+}
+
+.Section--accentDark{
+  background-color: #00B8D4;
+  color: rgba(0, 0, 0, .87);
+}
+
+.Section--white{
+  background-color: white;
+}
+
+.Section--grey{
+  background-color: #FAFAFA;
+  color: rgba(0, 0, 0, .87);
+  border-color: currentColor;
+}
+
+.Section--greyDark{
+  background-color: #212121;
+  color: rgba(255, 255, 255, .7);
+  border-color: currentColor;
+}
+
+/*@import 'tab';*/
+
+:root {
+
+  color: rgba(0, 0, 0, .87);
+  border-color: rgba(0, 0, 0, .12);
+}

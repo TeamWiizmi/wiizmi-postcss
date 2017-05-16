@@ -68,71 +68,82 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
+// removed by extract-text-webpack-plugin
 
+/***/ }),
+/* 1 */
+/***/ (function(module, exports) {
 
-$(document).ready(function () {
+$(document).ready(function() {
 
-  $('[data-toggle="drawer"], [data-toggle="dropdown"]').on('click', function (e) {
+  $('[data-toggle="drawer"]').on('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    var target = $(this).data('target');
+    if ($(target).hasClass('is-active')) {
+      $(target).removeClass('is-active');
+      $('body').removeClass('u-nbfc');
+    } else {
+      $(target).addClass('is-active');
+      $('body').addClass('u-nbfc');
+    }
+
+  });
+
+  $('[data-toggle="dropdown"]').on('click', function(e) {
     e.preventDefault();
     e.stopPropagation();
     var target = $(this).data('target');
     $(target).toggleClass('is-active');
   });
 
-  $(document).click(function (e) {
+  $(document).click(function(e) {
     e.stopPropagation();
 
     if (!$(e.target).is('[data-toggle="dropdown"]')) {
-      $('[data-toggle="dropdown"]').each(function () {
+      $('[data-toggle="dropdown"]').each(function() {
         $($(this).data('target')).removeClass('is-active');
-      });
+      })
     }
   });
 
-  $('[data-toggle="tab"]').on('click', function (e) {
+  $('[data-toggle="tab"]').on('click', function(e) {
     e.preventDefault();
     var target = $(this).data('target');
-    $(this).addClass('is-active').siblings().removeClass('is-active');
-    $(target).addClass('is-active').siblings().removeClass('is-active');
-  });
+    $(this).addClass('is-active').siblings().removeClass('is-active');      
+    $(target).addClass('is-active').siblings().removeClass('is-active');      
+    
+  });    
 
-  $('[data-toggle="dialog"]').each(function (e) {
+  $('[data-toggle="dialog"]').each(function(e) {
     var target = $(this).data('target');
     var dialog = document.querySelector(target);
-    $(this).on('click', function (e) {
-      dialog.showModal();
-    });
-    $(target).find('.close').click(function () {
-      dialog.close();
+    dialogPolyfill.registerDialog(dialog);
+
+    $(this).on('click', function(e) { dialog.showModal(); });
+    $(target).find('.js-close').click(function(e){ 
+      e.preventDefault();
+      dialog.close(); 
     });
   });
+
 });
 
-/***/ }),
-/* 1 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
 
 /***/ }),
 /* 2 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index_css__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__index_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__index_js__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__index_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__index_js__);
 
 
-var _index = __webpack_require__(1);
-
-var _index2 = _interopRequireDefault(_index);
-
-var _index3 = __webpack_require__(0);
-
-var _index4 = _interopRequireDefault(_index3);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ })
 /******/ ]);

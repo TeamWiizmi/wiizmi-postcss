@@ -1,21 +1,42 @@
 :root {
   --ms-bases: 1;
   --ms-ratios: 1.2;
-  font: 1rem/1.5 var(--sans-serif);
+  line-height: 1.5;
+  font-family: var(--sans-serif);
 
-  --font-size-4: { font-size: ms(4); line-height: 2lh; };
-  --font-size-3: { font-size: ms(3); line-height: 2lh;};
-  --font-size-2: { font-size: ms(2); line-height: 1lh;};
-  --font-size-1: { font-size: ms(1); line-height: 1lh;};
-  --font-size-0: { font-size: ms(0); line-height: 1lh;};
-  --font-size--1: { font-size: ms(-1); line-height: 1lh;};
+  --font-size-4: { 
+    font-size: ms(4); 
+    line-height: 2lh; 
+  };
+  
+  --font-size-3: { 
+    font-size: ms(3); 
+    line-height: 1lh;
+  };
+  
+  --font-size-2: { 
+    font-size: ms(2); 
+    line-height: 1lh;
+  };
+
+  --font-size-1: { 
+    font-size: ms(1); 
+    line-height: 1lh;
+  };
+
+  --font-size-0: { 
+    font-size: ms(0); 
+    line-height: 1lh;
+  };
+
+  --font-size--1: { 
+    font-size: ms(-1); 
+    line-height: 1lh;
+  };
 }
+
 
 @custom-selector :--heading h1, h2, h3, h4, h5, h6;
-
-body {
-
-}
 
 a {
   color: var(--Color-accent);
