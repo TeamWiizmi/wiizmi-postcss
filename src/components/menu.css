@@ -6,20 +6,50 @@
   &-item {
     position: relative;
 
-    &-link {
-      padding: 0.5lh calc(var(--Grid-gutter-size)/2);
+    padding: 0.25lh 0 calc(0.25lh - 1px) 0;
+
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: var(--palette-Black-Dividers);
+
+    &:hover,
+    &:focus {
+      > .Menu {
+        display: block;
+      }
+    }
+
+    a {
+      line-height: 1lh;
+
+      padding: 0.25lh 0;
+
       display: block;
       text-decoration: none;
       color: inherit;
+
+      &:hover {
+        color: var(--Color-accent);
+      }
+
+      &:not(:last-child){
+        display: flex;
+        &:after {
+          content: 'keyboard_arrow_down';
+        }
+      }
     }
 
     .Menu {
-      padding-left: var(--Grid-gutter-size);
+      padding-left: calc(var(--Grid-gutter-size)/2);
+      display: none;
+
       .Menu-item {
-        .Menu-item-link {
-          /*font-size: ms(-1);*/
-          padding-top: 0.25lh;
-          padding-bottom: 0.25lh;
+        padding: 0;
+        border: 0;
+
+        a {
+          font-style: ms(-1);
         }
       }
     }
@@ -28,17 +58,16 @@
 
 .Menu--inline {
   display: flex;
-  flex-shrink: 0;
   flex-wrap: nowrap;
   user-select: none;
+  overflow-x: auto;
 
-  & > .Menu-item {
+  .Menu-item {
+    padding: 0;
+    border: 0;
 
-    & > a {
-      padding-bottom: calc(0.5lh - 2px);
-
-      border-bottom: 2px solid;
-      border-color: transparent;
+    a {
+      padding: 0.25lh calc(var(--Grid-gutter-size)/2);
       white-space: nowrap;
 
       &.is-active,
@@ -48,9 +77,44 @@
         border-color: var(--Color-accent);
       }
     }
+
+    /*2nd*/    
+    .Menu {
+      padding-left: 0;
+
+      position: absolute;
+      left: 0;
+      top: auto;
+      background-color: white;
+      color: var(--palette-Black-Primary);
+      box-shadow: 1px 1px 1px black;
+      min-width: 220px;
+      z-index: 100;
+
+
+      .Menu-item {
+        a {
+         border: 0; 
+         padding: 0.25lh calc(var(--Grid-gutter-size)/2);
+
+         &:not(:last-child){
+            &:after {
+              content: 'keyboard_arrow_right';
+              float: right;
+            }
+          }
+        }
+        /*3rd*/
+        .Menu {
+          position: absolute;
+          top: 0;
+          left: 100%;
+        }
+      }
+    }
   }
 }
-
+/*
 .Menu--dropdown {
   display: none;
   position: absolute;
@@ -89,4 +153,4 @@
   &.is-active {
     display: block;
   }
-}
+}*/

@@ -4,12 +4,13 @@
   background-size: cover;
   color: var(--palette-White-Primary-Primary);
   flex-basis: 100%;
+  border-radius: 3px;
   
   &-media {
     margin: 0;
     @util aspect-ratio(16:9);
 
-    & img {
+    img {
       position: absolute;
       margin: auto;
       left: 0;
@@ -19,115 +20,35 @@
   }
   
   &-header {
-    padding: 0.5lh var(--Grid-gutter-size);
-  }
+    padding: 1lh var(--Grid-gutter-size) 0.5lh;
 
-  &-header-title {
-
-    @apply --font-size-1;
-
-    font-weight: bolder;
-    margin: 0;
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-  }
-
-
-  &-header-subtitle {
-    @apply --font-size-0;
-
-    font-weight: bolder;
-    margin: 0;
-    opacity: .85;
-  }
-
-
-  &-actions {
-    padding: 0.5lh calc(var(--Grid-gutter-size)/2);
-  }
-
-  &-content {
-    padding: 0.5lh var(--Grid-gutter-size);
-    flex-grow: 1;
-  }
-
-  &--overlay {
-    position: relative;
-    background-size: cover;
-    color: white;
-    display: flex;
-    flex-direction: column;
-
-    & .Card-header,
-    & .Card-content,
-    & .Card-actions {
-      z-index: 2;
-      position: relative;
-    }
-
-    & .Card-header {
-      align-self: flex-start;
-    }
-
-    & .Card-actions {
-      margin-top: auto;
-    }
-
-    & .Card-stacked {
-      flex-basis: 100%;
-    }
-
-    &:before {
-      content: '';
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      background-color: rgba(0,0,0,.5);
-      z-index: 1;
-    }
-  }
-
-  &--horizontal {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-
-    & .Card-media {
-      flex: 1;
-      height: auto;
-      & img {
-        max-width: initial;
-        height: 100%;
-        position: absolute;
+    &-title {
+      @add-mixin modular-font-size 1;
+      font-weight: bolder;
+      margin: 0;
+      a {
+        color: inherit;
+        text-decoration: none;
       }
     }
 
-    & .Card-stacked {
-      flex: 2;
-      display: flex;
-      flex-direction: column;
-    }
+    &-subtitle {
+      @add-mixin modular-font-size 0;
 
-    & .Card-actions {
-      margin-top: auto;
+      font-weight: bolder;
+      margin: 0;
+      opacity: .85;
     }
   }
 
-  &--primary {
-    background-color: var(--Color-primary);
-    color: var(--Color-primary-text);
+
+  &-content {
+    padding: 0.5lh var(--Grid-gutter-size) 1lh;
+    flex-grow: 1;
   }
 
-  &--primaryLight {
-    background-color: var(--Color-primary--light);
-    color: var(--Color-primary--light-text);
+  &-actions {
+    padding: 0.25lh calc(var(--Grid-gutter-size)/2);
   }
 
-
-  &--accent {
-    background-color: var(--Color-accent);
-    color: var(--Color-accent-text);
-  }
 }

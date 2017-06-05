@@ -2,91 +2,46 @@
   padding: 2lh var(--Grid-gutter-size);
   position: relative;
 
+  &-inner {
+    max-width: 65rem;
+    margin: 0 auto;
+  }
+
   &-title {
-    @apply --font-size-4;
-    font-weight: bolder;
+    @add-mixin modular-font-size 3;
+
+    font-weight: bold;
     margin-bottom: 0.5lh;
   }
 
   &-subtitle {
-    @apply --font-size-2;
-    font-weight: bold;
+    @add-mixin modular-font-size 2;
+
+    font-weight: normal;
     margin-top: 0;
-    opacity: 0.85;
+    color: var(--palette-Black-Secondary);
   }
 
   &-lead {
-    @apply --font-size-1;
-    font-weight: normal;
+    @add-mixin modular-font-size 1;
+
+    font-weight: lighter;
+  }
+}
+
+.Section--overlay {
+  padding: 0;
+  display: grid;
+
+  .Section-front {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    padding: 2lh var(--Grid-gutter-size);
+    z-index: 1;
   }
 
-  &--hero {
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    min-height: 50vh;
-    overflow: hidden;
-
-    .Section-text {
-      background-color: rgba(255,255,255,.85);
-      padding: 0.5lh var(--Grid-gutter-size);
-    }
-
-    .Section-inner {
-      position: relative;
-      z-index: 200;
-    }
+  .Section-back {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
   }
-
-  &--fullHeight {
-    min-height: 100vh;
-  }
-
-  &--primary {
-    background-color: var(--Color-primary);
-    color: var(--Color-primary-text);
-  }
-
-  &--primaryLight {
-    background-color: var(--Color-primary--light);
-    color: var(--Color-primary--light-text);
-  }
-
-  &--primaryDark {
-    background-color: var(--Color-primary--dark);
-    color: var(--Color-primary--dark-text);
-  }
-
-  &--accent {
-    background-color: var(--Color-accent);
-    color: var(--Color-accent-text);
-  }
-
-  &--accentLight {
-    background-color: var(--Color-accent--light);
-    color: var(--Color-accent--light-text);
-  }
-
-  &--accentDark {
-    background-color: var(--Color-accent--dark);
-    color: var(--Color-accent--dark-text);
-  }
-
-  &--white {
-    background-color: white;
-  }
-
-  &--grey {
-    background-color: var(--palette-Grey-50);
-    color: var(--palette-Black-Primary);
-    border-color: currentColor;
-  }
-
-  &--greyDark {
-    background-color: var(--palette-Grey-900);
-    color: var(--palette-White-Secondary);
-    border-color: currentColor;
-  }
-
-
 }

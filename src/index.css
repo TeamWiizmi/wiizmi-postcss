@@ -1,21 +1,19 @@
 @import url('https://fonts.googleapis.com/css?family=Material+Icons');
 
-@import "suitcss";
-
 @import "google-material-color/dist/palette.var.css";
+@import "suitcss-base";
+@import "suitcss-components-button";
+@import "suitcss-components-grid";
+@import "suitcss-utils-size";
+@import "suitcss-utils-flex";
 @import 'base';
 @import 'components';
-
-
-@custom-media --sm-viewport (min-width:40em);
-@custom-media --md-viewport (min-width:60em);
-@custom-media --lg-viewport (min-width:80em);
+@import 'utilities';
 
 :root {
-  --sans-serif: 'Open Sans', sans-serif;
-  --serif: 'Roboto', serif;
-  --monospace: "Roboto Mono", monospace;
-  --Heading-font: var(--sans-serif);
+  --sans-serif: sans-serif;
+  --serif: serif;
+  --monospace: monospace;
 
   --Grid-gutter-size: 1.5rem;
 
@@ -31,23 +29,23 @@
   --Color-primary--dark-text:             var(--palette-Indigo-600-Primary);
   --Color-primary--dark-secondary-text:   var(--palette-Indigo-600-Secondary);
 
-  --Color-accent:                         var(--palette-Cyan-A200);
-  --Color-accent-text:                    var(--palette-Cyan-A200-Primary);
-  --Color-accent-secondary-text:          var(--palette-Cyan-A200-Secondary);
+  --Color-accent:                         var(--palette-Cyan-500);
+  --Color-accent-text:                    var(--palette-Cyan-500-Primary);
+  --Color-accent-secondary-text:          var(--palette-Cyan-500-Secondary);
 
-  --Color-accent--light:                  var(--palette-Cyan-A100);
-  --Color-accent--light-text:             var(--palette-Cyan-A100-Primary);
-  --Color-accent--light-secondary-text:   var(--palette-Cyan-A100-Secondary);
+  --Color-accent--light:                  var(--palette-Cyan-200);
+  --Color-accent--light-text:             var(--palette-Cyan-200-Primary);
+  --Color-accent--light-secondary-text:   var(--palette-Cyan-200-Secondary);
   
-  --Color-accent--dark:                   var(--palette-Cyan-A700);
-  --Color-accent--dark-text:              var(--palette-Cyan-A700-Primary);
-  --Color-accent--dark-secondary-text:    var(--palette-Cyan-A700-Secondary);
+  --Color-accent--dark:                   var(--palette-Cyan-600);
+  --Color-accent--dark-text:              var(--palette-Cyan-600-Primary);
+  --Color-accent--dark-secondary-text:    var(--palette-Cyan-600-Secondary);
 
   --Button-border-width: 1px;
   --Button-border-color: currentcolor;
-  --Button-padding: calc(0.25lh - 1px) calc(var(--Grid-gutter-size)/3 - 1px);
+  --Button-padding: calc(0.25lh - 1px) calc(var(--Grid-gutter-size)/2 - 1px);
   --Button-padding--sm: calc(0.125lh - 1px) calc(var(--Grid-gutter-size)/4 - 1px);
-  --Button-padding--lg: calc(0.5lh - 1px) calc(var(--Grid-gutter-size) - 1px);
+  --Button-padding--lg: calc(0.75lh - 1px) calc(var(--Grid-gutter-size)*2 - 1px);
   --Button-color: inherit;
   --Button-font: inherit;
   --Button-disabled-opacity: 0.5;
@@ -56,6 +54,8 @@
   --Input-padding: calc(0.25lh - 1px) calc(var(--Grid-gutter-size)/3 - 1px);
   --Input-border-color: var(--palette-Black-Dividers);
 
-  color: var(--palette-Black-Primary);
-  border-color: var(--palette-Black-Dividers);
 }
+
+@custom-media --sm-viewport (min-width:40em);
+@custom-media --md-viewport (min-width:60em);
+@custom-media --lg-viewport (min-width:80em);

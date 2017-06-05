@@ -1,79 +1,56 @@
 :root {
   --ms-bases: 1;
   --ms-ratios: 1.2;
+  --ms-md-ratios: 1.4;
+  --ms-lg-ratios: 1.5;
+
   line-height: 1.5;
-  font-family: var(--sans-serif);
-
-  --font-size-4: { 
-    font-size: ms(4); 
-    line-height: 2lh; 
-  };
-  
-  --font-size-3: { 
-    font-size: ms(3); 
-    line-height: 1lh;
-  };
-  
-  --font-size-2: { 
-    font-size: ms(2); 
-    line-height: 1lh;
-  };
-
-  --font-size-1: { 
-    font-size: ms(1); 
-    line-height: 1lh;
-  };
-
-  --font-size-0: { 
-    font-size: ms(0); 
-    line-height: 1lh;
-  };
-
-  --font-size--1: { 
-    font-size: ms(-1); 
-    line-height: 1lh;
-  };
+  font-family: var(--serif);
 }
 
+@define-mixin modular-font-size $scale {
+  font-size: modularScale($scale, var(--ms-ratios));
+  @media (--md-viewport) { font-size: modularScale($scale, var(--ms-md-ratios)); }
+  @media (--lg-viewport) { font-size: modularScale($scale, var(--ms-lg-ratios)); }
+}
 
 @custom-selector :--heading h1, h2, h3, h4, h5, h6;
 
-a {
-  color: var(--Color-accent);
-}
 
 :--heading {
-  font-family: var(--Heading-font);
+  font-family: var(--sans-serif);
   margin: 2lh 0 1lh 0;
+  line-height: 1.1;
 }
 
 h1 {
-  @apply --font-size-4;  
+  @add-mixin modular-font-size 4;
 }
 
 h2 {
-  @apply --font-size-3;
+  @add-mixin modular-font-size 3;
 }
 
 h3 {
-  @apply --font-size-2;
+  @add-mixin modular-font-size 2;
 }
 
 h4 {
-  @apply --font-size-1;
+  @add-mixin modular-font-size 1;
 }
 
 h5 {
-  @apply --font-size-0;
+  @add-mixin modular-font-size 0;
 }
 
 h6 {
-  @apply --font-size--1;
+  @add-mixin modular-font-size -1;
 }
 
 p,
+figure,
 blockquote,
-ul, ol {
+ul, ol, dl {
   margin: 1lh 0;
 }
 
@@ -84,18 +61,71 @@ figure {
     margin: auto;
     display: block;
   }
+
+  figcaption {
+    @apply --font-size--1;
+    color: var(--palette-Black-Secondary);
+    text-align: center;
+  }
+}
+
+hr {
+  padding: 0;
+  margin: 0.5lh 0;
+  border: 0;
+  border-top: 1px solid var(--palette-Black-Dividers);
+}
+
+pre {
+  background-color: var(--palette-Grey-50);
+  padding: 0.5lh var(--Grid-gutter-size);
+  code {
+    white-space: pre-wrap;
+  }
 }
 
 small {
-  font-size: ms(-1);
+  @apply --font-size--1;
 }
 
 img {
   max-width: 100%;
 }
 
-blockquote {
-  border-left: 2px solid var(--Color-accent);
+menu {
+  padding: 0;
+}
+
+
+ul, ol {
   padding-left: var(--Grid-gutter-size);
+  ul, ol {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+ul {
+  list-style: disc;
+  ul {
+    list-style: circle;
+    ul {
+      list-style: square;
+    }
+  }
+}
+
+ol {
+  list-style: decimal;
+}
+
+dt {
+  margin-top: 0.5lh;
+  font-weight: bold;
+}
+
+blockquote {
+  border-left: 4px solid var(--Color-accent);
+  padding: 0.25lh var(--Grid-gutter-size) 0.25lh;
   margin-left: 0;
 }

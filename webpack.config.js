@@ -1,6 +1,5 @@
 const webpack = require('webpack');
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
@@ -30,19 +29,5 @@ module.exports = {
   },
   plugins: [
     new ExtractTextPlugin({filename: 'index.css'}),
-    new HtmlWebpackPlugin({
-      filename: 'index.html',
-      template: 'views/index.pug'
-    }),
-    new HtmlWebpackPlugin({
-      filename: 'article.html',
-      template: 'views/article.pug'
-    })
-
-  ],
-  devServer: {
-    contentBase: path.join(__dirname, "dist"),
-    compress: true,
-    port: 9001
-  }
+  ]
 };

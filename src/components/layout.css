@@ -18,9 +18,10 @@ body {
     z-index: 400;
     top: 0;
     left: 0;
-    min-width: 25%;
+    min-width: 75%;
     height: 100%;
     background-color: white;
+    padding: 1lh var(--Grid-gutter-size);
     transform: translateX(-100%);
     transform-style: preserve-3d;
     transition: transform 0.5s ease-out;
@@ -58,9 +59,6 @@ body {
     flex-shrink: 0;
     flex-direction: column;
 
-    background-color: var(--Color-primary--dark);
-    color: var(--Color-primary-text);
-
     &-row {
       display: flex;
       flex-direction: row;
@@ -70,7 +68,7 @@ body {
     }
 
     &-logo{
-      margin: 0.5lh var(--Grid-gutter-size);
+      margin: 0.5lh var(--Grid-gutter-size) 0.5lh 0;
       height: 2lh;
     }
 
@@ -80,16 +78,19 @@ body {
       flex-direction: column;
 
       &-text {
-        font-size: ms(0);
-        font-weight: lighter;
+        @add-mixin modular-font-size 1;
+        font-weight: bold;
+        margin: 0;
         color: inherit;
         text-decoration: none;
       }
 
       &-slogan {
-        font-size: ms(-1);
+        @add-mixin modular-font-size 0;
+
         font-weight: lighter;
-        opacity: 0.85;
+        margin: 0;
+        color: var(--palette-Black-Secondary);
       }
     }
 

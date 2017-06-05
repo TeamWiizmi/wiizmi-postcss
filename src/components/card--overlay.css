@@ -1,0 +1,15 @@
+.Card--overlay {
+  display: gird;
+
+  .Card-media {
+    grid-row: 1 / 2;
+  }
+
+  .Card-header {
+    grid-row: 1 / 2;
+  }
+
+  .Card-content {
+    grid-row: 3 / 4;
+  }
+}

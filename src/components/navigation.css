@@ -1,13 +1,89 @@
 .Navigation {
   padding: 0;
+  overflow: hidden;
 
   &-title {
-    font-size: ms(0);
-    padding: 1lh var(--Grid-gutter-size);
+    padding: 1lh 0;
     margin: 0;
 
     a {
       color: inherit;
     }
   }
+}
+
+.Breadcrumb {
+  & ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    & li {
+      display: inline-block;
+      color: inherit;
+
+      & a {
+        text-decoration: none;
+        color: inherit;
+
+        &:after {
+          font-family: 'Material Icons';
+          content: 'chevron_right';
+          vertical-align: middle;
+          line-height: 1;
+        }
+
+      }
+    }
+  }
+}
+
+.Pager {
+  ul {
+    padding-left: 0;
+    list-style: none;
+    li {
+      display: inline-block;
+
+      a {
+        padding: 0.25lh calc(var(--Grid-gutter-size)/2);
+        display: block;
+        text-decoration: none;
+        background-color: var(--palette-Grey-200);
+        border-color: var(--palette-Grey-200);
+        color: var(--palette-Black-Primary);
+
+      }
+      
+      
+      &.is-active a{
+        background-color: var(--Color-accent);
+        border-color: var(--Color-accent);
+        color: var(--Color-accent-text);
+      }
+    }
+  }
+}
+
+.Tabs {
+/*  &-bar {
+    background-color: var(--palette-Grey-100);
+    &-tab {
+      display: inline-block;
+      text-decoration: none;
+      border-color: transparent;
+
+      &.is-active {
+        border-color: var(--Color-accent);
+      }
+    }
+  }
+
+  &-panel {
+    padding: vr(1)rem;
+    display: none;
+
+    &.is-active {
+      display: block;
+    }
+  }*/
 }

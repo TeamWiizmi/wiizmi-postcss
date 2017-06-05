@@ -68,7 +68,6 @@ input[type="checkbox"]:checked + label:before {
   background-image: url(https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_check_box_black_24px.svg);
 }
 
-
 textarea {
   resize: vertical;
 }
@@ -84,8 +83,6 @@ textarea {
 }
 
 :--text-inputs {
-  font-size: ms(0);
-  line-height: 1lh;
   padding: var(--Input-padding);
 
   &::placeholder {
@@ -103,8 +100,6 @@ option {
 }
 
 select:not([multiple]) {
-  font-size: ms(0);
-  line-height: 1lh;
   height: auto;
   padding: var(--Input-padding);
   appearance: none;

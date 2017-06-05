@@ -20,7 +20,6 @@
     }
 
     &-title {
-      @apply --font-size-1;
       margin-top: 0;
       a {
         color: inherit;
@@ -28,7 +27,6 @@
     }
 
     &-content {
-      @apply --font-size--1;
     }
 
   }

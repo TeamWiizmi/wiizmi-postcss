@@ -1,8 +1,10 @@
 
 .Button {
+  font-family: var(--sans-serif);
   background-color: inherit;
   color: inherit;
   vertical-align: middle;
+  line-height: 1lh;
 
   .material-icons {
     line-height: 1;
@@ -10,13 +12,19 @@
     vertical-align: middle;
   }
 
+  & + & {
+    margin-left: calc(var(--Grid-gutter-size)/2);
+  }
+
+  &:hover {
+    color: var(--Color-accent);
+  }
+
   &--sm {
-    @apply --font-size--1;
     padding: var(--Button-padding--sm);
   }
 
   &--lg {
-    @apply --font-size-1;
     padding: var(--Button-padding--lg);
   }
 
@@ -32,7 +40,14 @@
       width: 1.5lh;
       height: 1.5lh;
     }
+  }
 
+  &--block {
+    display: block;
+
+    & + & {
+      margin: 0.5lh 0;
+    }
   }
 
   &[disabled] {
@@ -44,6 +59,10 @@
     background-color: var(--Color-primary);
     color: var(--Color-primary-text);
     border-color: var(--Color-primary);
+    &:hover {
+      background-color: var(--Color-primary--light);
+      color: var(--Color-primary-text);
+    }
   }
 
   &--accent {
@@ -51,12 +70,8 @@
     color: var(--Color-accent-text);
     border-color: var(--Color-accent);
     &:hover {
-      background-color: var(--Color-accent);
+      background-color: var(--Color-accent--light);
       color: var(--Color-accent-text);
     } 
-  }
-
-  & + & {
-    margin-left: calc(var(--Grid-gutter-size)/2);
   }
 }
