@@ -1,15 +1,7 @@
 .Card--overlay {
-  display: gird;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
 
-  .Card-media {
-    grid-row: 1 / 2;
-  }
-
-  .Card-header {
-    grid-row: 1 / 2;
-  }
-
-  .Card-content {
-    grid-row: 3 / 4;
-  }
+  color: white;
 }

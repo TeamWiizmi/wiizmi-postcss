@@ -6,12 +6,6 @@
   &-item {
     position: relative;
 
-    padding: 0.25lh 0 calc(0.25lh - 1px) 0;
-
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
-    border-bottom-color: var(--palette-Black-Dividers);
-
     &:hover,
     &:focus {
       > .Menu {
@@ -35,6 +29,7 @@
       &:not(:last-child){
         display: flex;
         &:after {
+          font-family: 'Material Icons';
           content: 'keyboard_arrow_down';
         }
       }
@@ -58,9 +53,8 @@
 
 .Menu--inline {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   user-select: none;
-  overflow-x: auto;
 
   .Menu-item {
     padding: 0;
@@ -87,8 +81,7 @@
       top: auto;
       background-color: white;
       color: var(--palette-Black-Primary);
-      box-shadow: 1px 1px 1px black;
-      min-width: 220px;
+     min-width: 220px;
       z-index: 100;
 
 

@@ -2,9 +2,11 @@
 .Button {
   font-family: var(--sans-serif);
   background-color: inherit;
+  font-weight: bold;
   color: inherit;
   vertical-align: middle;
-  line-height: 1lh;
+  border-color: transparent;
+  border-radius: 3px;
 
   .material-icons {
     line-height: 1;
@@ -17,7 +19,8 @@
   }
 
   &:hover {
-    color: var(--Color-accent);
+    background-color: var(--palette-Grey-300);
+
   }
 
   &--sm {
@@ -25,6 +28,7 @@
   }
 
   &--lg {
+    /*@add-mixin modular-font-size 1;    */
     padding: var(--Button-padding--lg);
   }
 
@@ -44,7 +48,8 @@
 
   &--block {
     display: block;
-
+    width: 100%;
+    
     & + & {
       margin: 0.5lh 0;
     }

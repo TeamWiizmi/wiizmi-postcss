@@ -1,7 +1,4 @@
 .Chip {
-  font-size: ms(-1);
-  line-height: 1lh;
-
   padding: 0 calc(var(--Grid-gutter-size)/4);
   display: inline-block;
   background-color: var(--palette-Grey-200);
@@ -11,5 +8,10 @@
   
   &:hover {
     text-decoration: none;
+  }
+
+  &.is-active {
+    background-color: var(--Color-accent);
+    color: var(--Color-accent-text);
   }
 }

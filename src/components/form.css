@@ -5,8 +5,30 @@
     margin: 1lh 0;
     
     &-hint {
-      font-size: ms(-1);
+      @add-mixin modular-font-size -1;
       color: var(--palette-Black-Hint);
+      margin: 0;
+    }
+
+    &--inline {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      input {
+        width: auto;
+      }
+      label {
+        margin: 0 1rem 0 0;
+      }
+      .Form-item-hint {
+        flex-basis: 100%;
+      }
+    }
+
+    &--lg {
+      input {
+        padding: var(--Input-padding--lg);
+      }
     }
   }
 
@@ -22,5 +44,14 @@
   }
 
   &-actions {
+    margin: 1lh 0;
+  }
+}
+
+.Form--inline {
+  display: flex;
+
+  label {
+    margin-top: 0;
   }
 }

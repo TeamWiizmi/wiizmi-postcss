@@ -113,9 +113,9 @@ body {
   }
 
   &-footer {
-    padding: 1lh var(--Grid-gutter-size);
-    background-color: var(--palette-Grey-800);
-    color: var(--palette-White-Secondary);
     flex-shrink: 0;
+    &-row {
+      padding: 1lh var(--Grid-gutter-size);
+    }
   }
 }

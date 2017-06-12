@@ -1,4 +1,5 @@
 table {
+  margin: 1lh 0;
   width: 100%;
   border-collapse: collapse;
 
@@ -13,7 +14,7 @@ table {
   }
 
   tr {
-    background-color: white;
+    background-color: var(--palette-Grey-50);
     margin: 0.5lh 0;
     display: block;
   }
@@ -28,6 +29,8 @@ table {
 
     &:before {
       content: attr(data-th);
+      float: left;
+      text-align: left;
       font-weight: bold;
       display: inline-block;
       width: 35%;
@@ -37,7 +40,6 @@ table {
   }
 
   th, td {
-    @add-mixin modular-font-size -1;
     padding: 0.5lh var(--Grid-gutter-size);
     border-color: var(--palette-Black-Dividers);
   }

@@ -63,7 +63,7 @@ figure {
   }
 
   figcaption {
-    @apply --font-size--1;
+    @add-mixin modular-font-size -1;
     color: var(--palette-Black-Secondary);
     text-align: center;
   }
@@ -85,7 +85,7 @@ pre {
 }
 
 small {
-  @apply --font-size--1;
+  @add-mixin modular-font-size -1;
 }
 
 img {

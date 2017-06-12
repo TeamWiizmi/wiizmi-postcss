@@ -76,6 +76,7 @@ textarea {
 fieldset,
 select, 
 textarea {
+  line-height: 1.5;
   width: 100%;
   border-width: var(--Input-border-width);
   border-style: solid;
@@ -84,6 +85,12 @@ textarea {
 
 :--text-inputs {
   padding: var(--Input-padding);
+  border-radius: 3px;
+
+  &:focus {
+    outline: 0;
+    border-color: var(--Color-accent);
+  }
 
   &::placeholder {
     color: var(--palette-Black-Hint);

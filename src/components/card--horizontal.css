@@ -1,32 +1,24 @@
 @media (--sm-viewport) {
   .Card--horizontal {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    display: flex;
 
     .Card-media {
-      grid-column: 1 / 5;
-      grid-row: 1 / 4;
-      height: 100%;
+      flex-basis: 50%;
+      flex-shrink: 0.5;
+
+      &:after{
+        padding-bottom: 100%;
+      }
+
       img {
-        height: 100%;
-        object-fit: cover;
       }
 
     }
 
-    .Card-header { 
-      grid-column: 5 / 12 span;
-      grid-row: 1;
+    .Card-stack {
+      flex-grow: 1;
+      flex-direction: column;
     }
 
-    .Card-content {
-      grid-column: 5 / 12 span;
-      grid-row: 2;
-
-    }
-    .Card-actions {
-      grid-column: 5 / 12 span;
-      grid-row: 3;
-    }
   }
 }

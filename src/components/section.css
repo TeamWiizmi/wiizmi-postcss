@@ -2,11 +2,6 @@
   padding: 2lh var(--Grid-gutter-size);
   position: relative;
 
-  &-inner {
-    max-width: 65rem;
-    margin: 0 auto;
-  }
-
   &-title {
     @add-mixin modular-font-size 3;
 
@@ -30,18 +25,9 @@
 }
 
 .Section--overlay {
-  padding: 0;
-  display: grid;
-
-  .Section-front {
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
-    padding: 2lh var(--Grid-gutter-size);
-    z-index: 1;
-  }
-
-  .Section-back {
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
-  }
+  color: var(--palette-White-Primary);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-attachment: fixed;
 }

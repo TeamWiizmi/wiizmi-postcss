@@ -1,0 +1,12 @@
+.Badge {
+  @add-mixin modular-font-size -1;  
+  line-height: 1;
+  display: inline-block;
+  background-color: var(--Color-accent);
+  color: var(--Color-accent-text);
+  padding: 0.25lh calc(var(--Grid-gutter-size)/2);
+  text-align: center;
+  position: relative;
+  border-radius: 0.5rem;
+  font-weight: bold;
+}
