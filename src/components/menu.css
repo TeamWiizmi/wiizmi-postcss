@@ -23,7 +23,7 @@
       color: inherit;
 
       &:hover {
-        color: var(--Color-accent);
+        color: var(--Link-color);
       }
 
       &:not(:last-child){
@@ -81,7 +81,7 @@
       top: auto;
       background-color: white;
       color: var(--palette-Black-Primary);
-     min-width: 220px;
+      min-width: 220px;
       z-index: 100;
 
 
@@ -107,43 +107,3 @@
     }
   }
 }
-/*
-.Menu--dropdown {
-  display: none;
-  position: absolute;
-  left: 0;
-  top: auto;
-  background-color: white;
-  color: var(--palette-Black-Primary);
-  box-shadow: 1px 1px 1px black;
-  min-width: 220px;
-  z-index: 100;
-
-  .Menu-item {
-
-    &-link {
-    }
-
-    &-link:hover {
-    }
-
-    .Menu {
-      display: none;
-      position: absolute;
-      top: 0;
-      left: 100%;
-      min-width: 220px;
-      box-shadow: 1px 1px 1px black;
-      background-color: white;
-      padding-left: 0;
-    }
-
-    &:hover > .Menu {
-      display: block;
-    }
-  }
-
-  &.is-active {
-    display: block;
-  }
-}*/

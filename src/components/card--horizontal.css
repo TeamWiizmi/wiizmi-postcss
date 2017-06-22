@@ -1,24 +1,29 @@
 @media (--sm-viewport) {
   .Card--horizontal {
-    display: flex;
-
+    display: grid;
+    grid-column-gap: var(--Grid-gutter-size);
+    grid-template-columns: 35% auto;
     .Card-media {
-      flex-basis: 50%;
-      flex-shrink: 0.5;
-
-      &:after{
-        padding-bottom: 100%;
-      }
-
-      img {
-      }
-
+      grid-column: 1;
+      grid-row: 1 / 4;
     }
 
-    .Card-stack {
-      flex-grow: 1;
-      flex-direction: column;
+    .Card-header,
+    .Card-content,
+    .Card-actions {
+      grid-column: 2;
     }
 
+    .Card-header {
+      grid-row: 1;
+    }
+    .Card-content {
+      grid-row: 2;
+    }
+
+    .Card-actions {
+      grid-row: 3;
+    }
+    
   }
 }

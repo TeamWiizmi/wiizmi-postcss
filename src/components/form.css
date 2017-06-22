@@ -4,6 +4,10 @@
   &-item {
     margin: 1lh 0;
     
+    label {
+      margin-top: 0;
+    }
+
     &-hint {
       @add-mixin modular-font-size -1;
       color: var(--palette-Black-Hint);

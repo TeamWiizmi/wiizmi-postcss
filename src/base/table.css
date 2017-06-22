@@ -2,41 +2,11 @@ table {
   margin: 1lh 0;
   width: 100%;
   border-collapse: collapse;
-
+  
   caption {
     background-color: white;
     text-align: left;
     padding: 0.5lh var(--Grid-gutter-size);
-  }
-
-  thead {
-    display: none;
-  }
-
-  tr {
-    background-color: var(--palette-Grey-50);
-    margin: 0.5lh 0;
-    display: block;
-  }
-
-  th {
-    text-align: left;
-    display: none;
-  }
-
-  td {
-    display: block; 
-
-    &:before {
-      content: attr(data-th);
-      float: left;
-      text-align: left;
-      font-weight: bold;
-      display: inline-block;
-      width: 35%;
-      color: var(--palette-Black-Primary);
-    }
-
   }
 
   th, td {
@@ -54,6 +24,43 @@ table {
   tfoot td {
     color: var(--palette-Black-Secondary);
   }
+
+}
+
+table.Table--responsive {
+
+  thead {
+    display: none;
+  }
+
+
+  th {
+    display: none;
+  }
+
+  tr {
+    background-color: var(--palette-Grey-50);
+    margin: 0.5lh 0;
+    display: block;
+  }
+
+  td {
+    display: block; 
+
+    &:before {
+      content: attr(data-label);
+      float: left;
+      text-align: left;
+      font-weight: bold;
+      display: inline-block;
+      width: 35%;
+      color: var(--palette-Black-Primary);
+    }
+
+  }
+
+
+
 
   /*Reset table*/
   @media (--sm-viewport) {

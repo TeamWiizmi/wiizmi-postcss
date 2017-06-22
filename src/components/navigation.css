@@ -1,6 +1,5 @@
 .Navigation {
   padding: 0;
-  overflow: hidden;
 
   &-title {
     margin-bottom: 0.5lh;

@@ -86,15 +86,6 @@ textarea {
 :--text-inputs {
   padding: var(--Input-padding);
   border-radius: 3px;
-
-  &:focus {
-    outline: 0;
-    border-color: var(--Color-accent);
-  }
-
-  &::placeholder {
-    color: var(--palette-Black-Hint);
-  }
 }
 
 select[multiple] {

@@ -6,22 +6,15 @@ module.exports = {
     require('postcss-cssnext')(),
     require('postcss-functions')({
       functions: {
-        modularScale: function(scale, ratio) {
+        modularScale: function(scale, ratios, bases) {
           ModularScale = require('modular-scale');
-          var msScale = new ModularScale({ratios: [ratio], bases: [1]});
-          return msScale(scale) + 'rem';
+          var msScale = new ModularScale({ratios: [ratios], bases: [bases]});
+          return msScale(scale);
         }
       }
     }),
     require('postcss-lh'),
     require('postcss-utilities'),
-    require('postcss-extend'),
-    require('cssnano')({
-      preset: ['default', {
-        discardComments: {
-          removeAll: true,
-        },
-      }]
-    }),
+    require('postcss-extend')
   ]
 }

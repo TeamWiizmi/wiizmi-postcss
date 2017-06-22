@@ -9,13 +9,16 @@
 }
 
 @define-mixin modular-font-size $scale {
-  font-size: modularScale($scale, var(--ms-ratios));
-  @media (--md-viewport) { font-size: modularScale($scale, var(--ms-md-ratios)); }
-  @media (--lg-viewport) { font-size: modularScale($scale, var(--ms-lg-ratios)); }
+  font-size: modularScale($scale, var(--ms-ratios), var(--ms-bases))rem;
+  @media (--md-viewport) { font-size: modularScale($scale, var(--ms-md-ratios), var(--ms-bases))rem; }
+  @media (--lg-viewport) { font-size: modularScale($scale, var(--ms-lg-ratios), var(--ms-bases))rem; }
 }
 
 @custom-selector :--heading h1, h2, h3, h4, h5, h6;
 
+a {
+  color: var(--Link-color);
+}
 
 :--heading {
   font-family: var(--sans-serif);
@@ -56,7 +59,6 @@ ul, ol, dl {
 
 figure {
   img {
-    width: 100%;
     max-width: 100%;
     margin: auto;
     display: block;

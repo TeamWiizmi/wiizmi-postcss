@@ -28,8 +28,6 @@ body {
 
     &.is-active {
       transform: translateX(0);
-      overflow-y: scroll;
-
       & + .Layout-obfuscator {
         background-color: rgba(0,0,0,.25);
         visibility: visible;
@@ -64,16 +62,15 @@ body {
       flex-direction: row;
       flex-wrap: wrap;
       align-items: center;
-      padding: 0 var(--Grid-gutter-size);
     }
 
     &-logo{
-      margin: 0.5lh var(--Grid-gutter-size) 0.5lh 0;
+      margin: 0.5lh 0 0.5lh calc(var(--Grid-gutter-size)/2);
       height: 2lh;
     }
 
     &-title {  
-      margin: 0.5lh 0;
+      margin: 0.5lh 0 0.5lh calc(var(--Grid-gutter-size)/2);
       display: flex;
       flex-direction: column;
 
@@ -87,10 +84,9 @@ body {
 
       &-slogan {
         @add-mixin modular-font-size 0;
-
         font-weight: lighter;
         margin: 0;
-        color: var(--palette-Black-Secondary);
+        opacity: .54;
       }
     }
 

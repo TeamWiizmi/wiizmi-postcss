@@ -4,6 +4,7 @@
 @import "suitcss-base";
 @import "suitcss-components-button";
 @import "suitcss-components-grid";
+@import "suitcss-components-arrange";
 @import "suitcss-utils-size";
 @import "suitcss-utils-flex";
 @import "suitcss-utils-text";
@@ -19,6 +20,8 @@
 
   --Grid-gutter-size: 1.5rem;
 
+  color: var(--palette-Black-text);
+  
   --Color-primary:                        var(--palette-Indigo-500);
   --Color-primary-text:                   var(--palette-Indigo-500-Primary);
   --Color-primary-secondary-text:         var(--palette-Indigo-500-Secondary);
@@ -43,6 +46,8 @@
   --Color-accent--dark-text:              var(--palette-Cyan-600-Primary);
   --Color-accent--dark-secondary-text:    var(--palette-Cyan-600-Secondary);
 
+  --Link-color: var(--Color-accent);
+
   --Button-border-width: 1px;
   --Button-border-color: currentcolor;
   --Button-padding: calc(0.25lh - 1px) calc(var(--Grid-gutter-size)/2 - 1px);
@@ -59,11 +64,24 @@
 
 }
 
-@custom-media --sm-viewport (min-width:40em);
-@custom-media --md-viewport (min-width:60em);
-@custom-media --lg-viewport (min-width:80em);
+@custom-media --sm-viewport (min-width:40rem);
+@custom-media --md-viewport (min-width:60rem);
+@custom-media --lg-viewport (min-width:80rem);
 
 
 .material-icons {
   vertical-align: middle;
+  font-family: 'Material Icons';
+  font-size: 120%;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
 }

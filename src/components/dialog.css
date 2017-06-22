@@ -21,17 +21,14 @@
   }
 
   &-title {
-    @include vr($font-size: 1, $padding: 0.5 var(--Grid-gutter-size));
     margin: 0;
   }
 
   &-content {
-    @include vr($font-size: 0, $padding: 0.5 var(--Grid-gutter-size));
     color: var(--palette-Black-Secondary);
   }
 
   &-actions {
-    @include vr($padding: 0.5 calc(var(--Grid-gutter-size)/2));
   }
 
 }

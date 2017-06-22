@@ -7,6 +7,7 @@
   vertical-align: middle;
   border-color: transparent;
   border-radius: 3px;
+  text-shadow: none;
 
   .material-icons {
     line-height: 1;
@@ -18,9 +19,8 @@
     margin-left: calc(var(--Grid-gutter-size)/2);
   }
 
-  &:hover {
-    background-color: var(--palette-Grey-300);
-
+  &.u-bgAccent:hover {
+    background-color: color(var(--Color-accent) tint(10%));
   }
 
   &--sm {
@@ -58,25 +58,5 @@
   &[disabled] {
     opacity: 0.25;
     cursor: not-allowed;
-  }
-
-  &--primary {
-    background-color: var(--Color-primary);
-    color: var(--Color-primary-text);
-    border-color: var(--Color-primary);
-    &:hover {
-      background-color: var(--Color-primary--light);
-      color: var(--Color-primary-text);
-    }
-  }
-
-  &--accent {
-    background-color: var(--Color-accent);
-    color: var(--Color-accent-text);
-    border-color: var(--Color-accent);
-    &:hover {
-      background-color: var(--Color-accent--light);
-      color: var(--Color-accent-text);
-    } 
   }
 }

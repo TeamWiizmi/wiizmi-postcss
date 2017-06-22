@@ -3,11 +3,11 @@
   &-media {
     margin: 0;
     position: relative;
+    /*display: flex;*/
+    align-items: center;
     img {
-      position: absolute;
       display: block;
       margin: auto;
-      height: 100%;
       top: 0;
       bottom: 0;
       left: 0;

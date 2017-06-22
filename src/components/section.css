@@ -4,17 +4,15 @@
 
   &-title {
     @add-mixin modular-font-size 3;
-
     font-weight: bold;
     margin-bottom: 0.5lh;
   }
 
   &-subtitle {
     @add-mixin modular-font-size 2;
-
     font-weight: normal;
     margin-top: 0;
-    color: var(--palette-Black-Secondary);
+    opacity: .75;
   }
 
   &-lead {
@@ -22,12 +20,13 @@
 
     font-weight: lighter;
   }
+
+  &--fullvh {
+    min-height: 100vh;
+  }
 }
 
 .Section--overlay {
-  color: var(--palette-White-Primary);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: 50% 50%;
-  background-attachment: fixed;
 }
